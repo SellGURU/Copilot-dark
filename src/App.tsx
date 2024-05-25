@@ -1,13 +1,14 @@
 import './App.css'
 import "symphony-ui/Themes/index.scss"
 import "./Themes/index.scss"
-import { Button } from 'symphony-ui'
+import { RouterProvider } from 'react-router-dom'
+import router from './router'
 
 function App() {
   return (
     <>
       <div>
-        <Button theme='Aurora'>button</Button>
+        <RouterProvider router={router} />
       </div>
     </>
   )
