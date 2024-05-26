@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
+import { SideMenu } from "@/components";
 export const themes = [
   {
     name: "Aurora",
     layout: "side-menu",
-    // component: ,
+    component: SideMenu,
   },
 ] as const;
 
@@ -33,6 +34,17 @@ const initialState = {
     layout: themes[0].layout
   },
 };
+export const selectTheme = (state: any) => {
+  if (localStorage.getItem("theme") === null) {
+    localStorage.setItem("theme", "Aurora");
+  }
+  
+  if (localStorage.getItem("layout") === null) {
+    localStorage.setItem("layout", "side-menu");
+  }
+  
+  return state.theme.value;
+};
 
 export const themeSlice = createSlice({
   name: "theme",
@@ -51,10 +63,11 @@ export const themeSlice = createSlice({
         name: state.value.name,
         layout: action.payload,
       };
-
+      
       localStorage.setItem("layout", action.payload);
     },
   },
 });
+export const { setTheme, setLayout } = themeSlice.actions;
 
 export default themeSlice.reducer;
