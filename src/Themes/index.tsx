@@ -34,7 +34,7 @@ function Main() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-background w-full h-screen">
       <Component />
     </div>
   );
