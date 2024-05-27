@@ -45,11 +45,11 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
           borderWidth: 2,
           pointBackgroundColor:  model==='linear' ?   "#00FFFF":  "#1e1e1e",
           pointBorderColor: "#00FFFF",
-          pointRadius: model === 'line' ? 3 : data.map((item, i) => (xData[i] === "04am" ? 5 : 0)),
+          pointRadius:   model === 'area' ? 0 : model === 'linear' ? data.map((item, i) => (xData[i] === "04am" ? 5 : 0)) : 3,
           pointHitRadius: 10,
           pointHoverRadius: 5,
-          tension: 0.3,
-          fill: model === 'linear' ? true : false,
+          tension: model === 'line' ? 0.1 : 0.3 ,
+          fill: model === 'line' ? false : true,
         },
       ],
     }),
@@ -57,7 +57,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   );
 
   useEffect(() => {
-    if (model === 'linear') {
+    if (model === 'linear' || 'area') {
       const chart = chartRef.current;
       if (chart) {
         const ctx = chart.ctx;
