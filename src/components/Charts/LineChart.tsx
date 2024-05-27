@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useMemo } from "react";
 import { Line } from "react-chartjs-2";
 import annotationPlugin from "chartjs-plugin-annotation";
-import { AnnotationOptions } from "chartjs-plugin-annotation";
 import {
   Chart as ChartJS,
   LineElement,
@@ -22,11 +21,9 @@ ChartJS.register(
   Filler,
   annotationPlugin
 );
-
 interface LineChartProps {
   model: string;
 }
-
 export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
   const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
@@ -45,7 +42,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
           borderWidth: 2,
           pointBackgroundColor:  model==='linear' ?   "#00FFFF":  "#1e1e1e",
           pointBorderColor: "#00FFFF",
-          pointRadius:   model === 'area' ? 0 : model === 'linear' ? data.map((item, i) => (xData[i] === "04am" ? 5 : 0)) : 3,
+          pointRadius:   model === 'area' ? 0 : model === 'linear' ? data.map((_, i) => (xData[i] === "04am" ? 5 : 0)) : 3,
           pointHitRadius: 10,
           pointHoverRadius: 5,
           tension: model === 'line' ? 0.1 : 0.3 ,
@@ -57,7 +54,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   );
 
   useEffect(() => {
-    if (model === 'linear' || 'area') {
+    if (model === 'linear' ||model ==='area') {
       const chart = chartRef.current;
       if (chart) {
         const ctx = chart.ctx;
@@ -72,12 +69,12 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
     }
   }, [chartData, model]);
 
-  const lineChartOptions = useMemo(() => {
-    const plugins: any = {
-      legend: {
-        display: false,
-      },
-    };
+  const lineChartOptions: ChartOptions<'line'> = useMemo(() => {
+    const plugins : ChartOptions<'line'>['plugins'] = {
+        legend : {
+            display : false,
+        }
+    }
 
     if (model === 'linear') {
       plugins.annotation = {
