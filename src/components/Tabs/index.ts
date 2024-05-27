@@ -1,9 +1,9 @@
-import biomarkerIcon from "../../assets/icons/biomarker.png";
-import diagnosisIcon from "../../assets/icons/diagnosis.png";
-import messagesIcon from "../../assets/icons/messages.png";
-import overviewIcon from "../../assets/icons/overview.png";
-import timelineIcon from "../../assets/icons/timeline.png";
-import trendIcon from "../../assets/icons/trend-up.png";
+import biomarkerIcon from "../../assets/icons/biomarker.svg";
+import diagnosisIcon from "../../assets/icons/health.svg";
+import messagesIcon from "../../assets/icons/messages.svg";
+import overviewIcon from "../../assets/icons/overview.svg";
+import timelineIcon from "../../assets/icons/timeline.svg";
+import trendIcon from "../../assets/icons/trend-up.svg";
 export const TabsInfo = [
   {
     text: "Overview",
