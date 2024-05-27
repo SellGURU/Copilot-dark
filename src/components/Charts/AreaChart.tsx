@@ -18,7 +18,7 @@ ChartJS.register(
   Tooltip,
   Filler,
 );
-export const AreaChart = () => {
+export  const AreaChart = () => {
 const areaChartRef = useRef<ChartJS<'line'>>(null);
 const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
 const xData = useMemo(() => ["01am", "02am", "03am", "04am", "05am", "06am"], []);

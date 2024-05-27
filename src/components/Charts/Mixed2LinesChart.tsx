@@ -1,5 +1,6 @@
-import { useRef,  useMemo } from "react";
+import  { useRef } from "react";
 import { Line } from "react-chartjs-2";
+import annotationPlugin from "chartjs-plugin-annotation";
 import {
   Chart as ChartJS,
   LineElement,
@@ -8,45 +9,64 @@ import {
   PointElement,
   Tooltip,
   Filler,
+  Legend,
+  Title,
+  Chart,
+  ChartOptions,
 } from "chart.js";
 import "chartjs-adapter-date-fns";
+
 ChartJS.register(
   LineElement,
   CategoryScale,
   LinearScale,
   PointElement,
   Tooltip,
-  Filler
+  Filler,
+  Legend,
+  Title,
+  annotationPlugin,
 );
-export const LineChart = () => {
+
+export const Mixed2LinesChart = () => {
   const chartRef = useRef<ChartJS<"line">>(null);
-  const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
-  const xData = useMemo(
-    () => ["01am", "02am", "03am", "04am", "05am", "06am"],
-    []
-  );
-  const chartData = useMemo(
-    () => ({
-      labels: xData,
-      datasets: [
-        {
-          label: "bpm",
-          data: data,
-          borderColor: "#00FFFF",
-          borderWidth: 2,
-          pointBackgroundColor: "#1e1e1e",
-          pointBorderColor: "#00FFFF",
-          pointRadius: 3,
-          pointHitRadius: 10,
-          pointHoverRadius: 5,
-          tension: 0.2, 
-        },
-      ],
-    }),
-    [data, xData]
-  );
-  const lineChartoptions = {
-    //line chart options
+
+  const data = {
+    labels: ["2 am", "3 am", "4 am", "5 am", "6 am", "7 am", "8 am", "9 am", "10 am", "11 am"],
+    datasets: [
+      {
+        label: "SPB",
+        data: [140, 130, 135, 145, 138, 130, 135, 140, 130, 140],
+        borderColor: "blue",
+        borderWidth: 2,
+        pointBackgroundColor: "blue",
+        pointBorderColor: "blue",
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        pointHitRadius: 10,
+        tension: 0.4,
+        fill: true,
+        pointStyle: 'rect',
+      },
+      {
+        label: "DPB",
+        data: [90, 85, 88, 92, 90, 85, 88, 90, 85, 88],
+        borderColor: "red",
+        borderWidth: 2,
+        pointBackgroundColor: "red",
+        pointBorderColor: "red",
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        pointHitRadius: 10,
+        tension: 0.4,
+        fill: true,
+        pointStyle: 'rect',
+     
+      },
+    ],
+  };
+
+  const options: ChartOptions<"line"> & { plugins: { annotation: { annotations: any } } } = {
     responsive : true,
     maintainAspectRatio : false,
     scales: {
@@ -55,29 +75,65 @@ export const LineChart = () => {
           color: "#fff",
         },
         grid: {
-          display: false,
+          display: true,
+          color: "#444",
+         
         },
       },
       y: {
         ticks: {
           color: "#fff",
+          callback: function (value) {
+            return value ;
+          },
         },
         grid: {
+          display : true,
           color: "#444",
+          
         },
+        min: 80,
+        max: 180,
       },
     },
     plugins: {
       legend: {
-        display: false,
+        display: true,
+        labels: {
+          color: "#fff",
+        },
       },
+      tooltip: {
+        enabled: true,
+      },
+    
+      annotation: {
+        annotations: {}
+      },
+     
+      
     },
   };
-
+  const backgroundColorPlugin = {
+    id: 'customCanvasBackgroundColor',
+    beforeDraw: (chart: Chart) => {
+      const ctx = chart.canvas.getContext('2d');
+      if(ctx){
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.fillStyle = '#121212'; // Set your background color here
+      ctx.fillRect(0, 0, chart.width, chart.height);
+      ctx.restore();
+      }
+    }
+  };
+  ChartJS.register(backgroundColorPlugin);
   return (
-    <div className="bg-[#121212]  p-5 relative">
-      <Line ref={chartRef} data={chartData} options={lineChartoptions} />
-      <h2 className="text-[#FFFFFF99] font-semibold absolute -top-1 left-4 ">bpm</h2>
+    <div className="relative">
+      <Line ref={chartRef} data={data} options={options} />
+      <h2 className="text-[#FFFFFF99] font-semibold absolute top-0 ml-2">mm Hg</h2>
     </div>
   );
 };
+
+export default  Mixed2LinesChart;
