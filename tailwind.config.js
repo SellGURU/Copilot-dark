@@ -11,6 +11,8 @@ export default {
       colors: {
         "primary-color": "#0CBC84",
 
+        "background":'#121212',
+        
         "secondary-color": "#253343",
 
         "placeholder-color": "#92A7C1",
