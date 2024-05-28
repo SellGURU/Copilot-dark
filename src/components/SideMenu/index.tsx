@@ -4,6 +4,7 @@ import icon from '@/assets/images/icon.png';
 import { menus } from "./menu";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import TopBar from "../topBar";
 
 const SideMenu = () => {
     const theme = useSelector((state:any) => state.theme.value.name)
@@ -15,6 +16,7 @@ const SideMenu = () => {
     return (
         <>
         <div className={`${theme}-SideMenu-container`}>
+            <TopBar></TopBar>
             <nav className={`${theme}-SideMenu-nav`}>
                 <div className={`${theme}-SideMenu-logo-container`}>
                     <img src={icon} alt="" />
