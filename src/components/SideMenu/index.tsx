@@ -4,6 +4,7 @@ import icon from '@/assets/images/icon.png';
 import { menus } from "./menu";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import TopBar from "../topBar";
 
 const SideMenu = () => {
     const theme = useSelector((state:any) => state.theme.value.name)
@@ -14,16 +15,17 @@ const SideMenu = () => {
     } 
     return (
         <>
-        <div className="flex">
-            <nav className="w-[80px] relative bg-[#1E1E1E]  h-screen border-[#3C3C3C] border-r ">
-                <div className="flex mt-5 w-full justify-center">
+        <div className={`${theme}-SideMenu-container`}>
+            <TopBar></TopBar>
+            <nav className={`${theme}-SideMenu-nav`}>
+                <div className={`${theme}-SideMenu-logo-container`}>
                     <img src={icon} alt="" />
                 </div>
-                <div className="mt-10">
+                <div className={`${theme}-SideMenu-MenuList-container`}>
                     {menus.map((menu) => {
                         return (
                             <>
-                                <div onClick={() => changeMenu(menu)} className={`w-full items-center cursor-pointer h-12 flex justify-center ${activeMenu.name == menu.name? 'bg-[#1ABEFF1A]':''}`}>
+                                <div onClick={() => changeMenu(menu)} data-mode={activeMenu.name == menu.name?'active':''} className={`${theme}-SideMenu-MenuList-menu-container`}>
                                     <img data-mode={activeMenu.name == menu.name?'active':''} className={`${theme}-icons-${menu.icon}`}  alt="" />
                                 </div>
                             </>
@@ -32,17 +34,16 @@ const SideMenu = () => {
 
                 </div>
 
-                <div className="absolute w-full bottom-5">
-                    <div className="w-full flex justify-center">
-                        <div className="w-full max-w-[50px] h-[1px] bg-[#3C3C3C]"></div>
-
+                <div className={`${theme}-SideMenu-MenuList2-container`}>
+                    <div className={`${theme}-SideMenu-MenuList2-Line-Container`}>
+                        <div className={`${theme}-SideMenu-MenuList2-Line`}></div>
                     </div>
-                    <div  className="w-full items-center cursor-pointer h-12 flex justify-center">
+                    <div  className={`${theme}-SideMenu-MenuList2-logOut`}>
                         <img className={`${theme}-icons-logOut`}  alt="" />
                     </div>
                 </div>
             </nav>   
-            <div className="w-full">
+            <div className={`${theme}-SideMenu-content`}>
                 <Outlet></Outlet>
             </div> 
 

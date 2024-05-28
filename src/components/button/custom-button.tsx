@@ -1,14 +1,17 @@
 import {FC} from "react";
 import {twMerge} from "tailwind-merge";
+import {useSelector} from "react-redux";
 
 interface CustomButtonProps {
     children: React.ReactNode;
     className?: string;
 }
 export const CustomButton:FC<CustomButtonProps> = ({children,className,...props}) => {
+    const theme = useSelector((state: any) => state.theme.value.name)
+
     return (
         <>
-        <button className={twMerge(`bg-[#03DAC5] w-fit py-2 gap-2 px-3 border rounded-xl border-black text-[#121212] disabled:opacity-50 flex items-center justify-between`,className)} {...props}>{children}</button>
+        <button className={twMerge(`${theme}-Button-primary`,className)} {...props}>{children}</button>
         </>
     );
 };

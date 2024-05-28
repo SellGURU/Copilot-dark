@@ -2,99 +2,128 @@ import {Link} from "react-router-dom";
 import {FiExternalLink} from "react-icons/fi";
 import {Badge} from "../badge/badge.tsx";
 import {FC} from "react";
+import {PiChatBold} from "react-icons/pi";
+import {useSelector} from "react-redux";
 
 interface TableRowProps {
-    patient:string;
-    memberId:string;
-    age:string;
-    sex:string;
-    weight:string;
-    enroll:string;
-    last:string;
-    followUp:string;
-    heartRate:string;
-    pressure:string;
-    temperature:string;
-    oxygen:string;
-    respiration:string;
-    action:string;
-    externalLink:string;
+    patient: string;
+    memberId: string;
+    age: string;
+    sex: string;
+    weight: string;
+    enroll: string;
+    state: string;
+    followUp: string;
+    heartRate: string;
+    pressure: string;
+    temperature: string;
+    oxygen: string;
+    respiration: string;
+    action: string;
+    externalLink: string;
+    stateColor: "green" | "red" | "yellow"
+    lastColor?: "yellow" | "none"
+    imageSrc: string
+    last: string
 }
-export const TableRow:FC<TableRowProps> = ({externalLink,patient,memberId,age,sex,weight,enroll,last,followUp, heartRate,pressure,temperature,oxygen,respiration,action}) => {
+
+export const TableRow: FC<TableRowProps> = ({
+                                                externalLink,
+                                                patient,
+                                                memberId,
+                                                age,
+                                                sex,
+                                                weight,
+                                                enroll,
+                                                state,
+                                                followUp,
+                                                heartRate,
+                                                pressure,
+                                                temperature,
+                                                oxygen,
+                                                respiration,
+                                                stateColor,
+                                                lastColor = "none",
+                                                imageSrc,
+                                                last
+                                            }) => {
+    const theme = useSelector((state: any) => state.theme.value.name)
     return (
         <>
-            <tr className="text-white bg-[#121212] ">
+            <tr className="text-white space-y-7 ">
 
-                <td scope="row"
-                    className="flex items-center gap-3 px-6 py-4 justify-center text-white">
-                    <img className="w-10 h-10 border rounded-full" src="/docs/images/people/profile-picture-1.jpg"
+                <td
+                    className={`${theme}-Table-td text-xs flex items-center gap-3 py-2 pl-2 pr-10 text-white`}>
+                    <img className="w-10 h-10 border rounded-full" src={imageSrc}
                          alt="Jese image"/>
                     <div className="">
-                        <div className="text-base font-semibold text-nowrap">{patient}</div>
+                        <div className="font-semibold text-nowrap">{patient}</div>
                     </div>
                     <Link to={externalLink}>
                         <FiExternalLink/>
                     </Link>
                 </td>
-                <td className="px-6 py-4 text-nowrap">
+                <td className={`${theme}-Table-td`}>
                     {memberId}
                 </td>
-                <td className="px-6 py-4">
-                    <div className="flex items-center justify-center">
-                        {age}
+                <td className={`${theme}-Table-td`}>
 
-                    </div>
+                    {age}
 
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
                     {sex}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
+                    <div className={" flex items-center justify-center"}>
 
-                    {weight}
+                        {weight}
+                    </div>
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {enroll}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {followUp}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
-                    <Badge color={"bg-yellow-400"}>
-                        {last}
+                    {last}
+                </td>
+                <td className={`${theme}-Table-td`}>
+                    <Badge color={stateColor}>
+                        {state}
                     </Badge>
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {heartRate}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {pressure}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {temperature}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {oxygen}
                 </td>
-                <td className="px-6 py-4 text-center ">
+                <td className={`${theme}-Table-td`}>
 
-                    <Badge color={"bg-yellow-400"}>
-                        {respiration}
-                    </Badge>
-                </td>
-                <td className="px-6 py-4 text-center ">
-                    <Badge color={"bg-yellow-400"}>
-                        {action}
-                    </Badge>
-                </td>
+                        <Badge color={lastColor}>
+                            {respiration}
+                        </Badge>
 
+                </td>
+                <td className={`${theme}-Table-td`}>
+
+                    <PiChatBold className={`${theme}-icons-PiChatBold`}/>
+                </td>
             </tr>
         </>
     );

@@ -49,6 +49,7 @@
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
 }
+<<<<<<< HEAD
 .Aurora-icons-arrow-left{
     mask-image: url(/Themes/Aurora/icons/arrow-left.svg);
     mask-size: 100%;
@@ -105,3 +106,8 @@
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
 }
+=======
+.Aurora-icons-PiChatBold{
+    @apply text-[#03DAC5] w-6 h-6
+}
+>>>>>>> 16d69a9d02473fef344d3dbc1950766980249ea1
