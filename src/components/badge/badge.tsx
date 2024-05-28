@@ -5,8 +5,9 @@ interface BadgeProps {
     children?: React.ReactNode;
 }
 export const Badge:FC<BadgeProps> = ({color,children}) => {
+
     return (
-        <div className={`text-center ${color?color:"bg-red-200"} rounded-xl py-2 px-3 text-white text-nowrap `}>
+        <div className={`text-center ${color} rounded-xl py-1 px-3 text-xs w-fit text-white text-nowrap `}>
             {children}
         </div>
     );

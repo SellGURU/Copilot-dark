@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <>
 
-<Pagination/>
+            <Pagination/>
             <h1>home</h1>
         </>
     )

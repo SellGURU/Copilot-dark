@@ -1,15 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Button } from "symphony-ui"
-import {useSelector } from 'react-redux'
+import {Table} from "@/components/table/table.tsx";
+
 const Develop = () => {
-    const theme = useSelector((state:any) => state.theme.value.name)
     return (
-        <>
-            <h1>Componets:</h1>
+        <div>
             <div>
-                <Button theme={theme}>button</Button>
+                {/*<Button theme={theme}>button</Button>*/}
             </div>
-        </>
+            {/*<div className={"flex items-center justify-evenly"}>*/}
+
+            {/*<GeneralReportCard/>*/}
+            {/*<GeneralReportCard/>*/}
+            {/*<GeneralReportCard/>*/}
+
+            {/*</div>*/}
+            {/*<Pagination/>*/}
+            {/*<div className={"w-1/2"}>*/}
+
+            {/*</div>*/}
+
+            <Table/>
+
+        </div>
     )
 }
 
