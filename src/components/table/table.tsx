@@ -32,7 +32,7 @@ export const Table = () => {
 
     return (
         <div className={" "}>
-            <div className=" w-[1276px] top-0 shadow-md sm:rounded-lg p-4 ">
+            <div className=" w-full top-0 shadow-md sm:rounded-lg p-4 ">
                 <div className={`${theme}-Table-header-section`}>
                     <label htmlFor="table-search" className="sr-only">
                         Search

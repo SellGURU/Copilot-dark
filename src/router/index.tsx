@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Develop, Home } from "../pages";
+import { Develop, Home, PatientList } from "../pages";
 import Layout from '@/Themes/index'
 const router = createBrowserRouter([
   {
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
       {
         path:'/develop',
         element: <Develop></Develop>
+      },
+      {
+        path:'/patientList',
+        element:<PatientList></PatientList>
       }
     ]
   },

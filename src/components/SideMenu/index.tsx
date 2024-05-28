@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Outlet } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
 import icon from '@/assets/images/icon.png';
 import { menus } from "./menu";
 import { useSelector } from "react-redux";
@@ -8,11 +8,27 @@ import TopBar from "../topBar";
 
 const SideMenu = () => {
     const theme = useSelector((state:any) => state.theme.value.name)
-    const [activeMenu,setActiveMenu] = useState(menus[0])
-
+    const resolveMenuFromRoute = () => {
+        switch (window.location.pathname) {
+            case "":
+            return "Patient List";
+            case "/patientlist":
+            return "Patient List";
+            default:
+            return window.location.pathname.replace("/", "");
+        }
+    };      
+    const resolveActiveMenu = () => {
+        return menus.filter(menue => menue.name == resolveMenuFromRoute()).length>0 ?menus.filter(menue => menue.name == resolveMenuFromRoute())[0] :menus[0]
+    }      
+    const [activeMenu,setActiveMenu] = useState(resolveActiveMenu())
+    
+    const navigate = useNavigate()
     const changeMenu = (menu:any) => {
         setActiveMenu(menu)
+        navigate(menu.url)
     } 
+
     return (
         <>
         <div className={`${theme}-SideMenu-container`}>
