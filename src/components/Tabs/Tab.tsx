@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
-import '../../Themes/Aurora/icons/index.scss'
 interface BackTabProps {
   text: string;
-  icon: string;
+  
   active: string;
   setActive: React.Dispatch<React.SetStateAction<string>>;
   isFirst?: boolean;
@@ -10,7 +9,6 @@ interface BackTabProps {
 }
 export const Tab = ({
   text,
-  icon,
   active,
   setActive,
   isFirst,
@@ -23,10 +21,10 @@ export const Tab = ({
       data-isLast={isLast}
       data-isFirst={isFirst}
       onClick={() => setActive(text)}
-      className={`${theme}-Tab ${theme}-icons-message-square`}
+      className={`${theme}-tab`}
     >
-      
-      <h5 className="text-white font-normal text-[14px]  ">{text}</h5>
+      <img className={`${theme}-icons-${text}`} alt="" />
+      <h5 className= {`${theme}-tab-text`}>{text}</h5>
     </div>
   );
 };

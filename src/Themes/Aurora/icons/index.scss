@@ -49,3 +49,59 @@
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
 }
+.Aurora-icons-arrow-left{
+    mask-image: url(/Themes/Aurora/icons/arrow-left.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6  ;
+}
+.Aurora-icons-Overview{
+    mask-image: url(/Themes/Aurora/icons/overview.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-[#FFFFFF99] ;
+}
+.Aurora-icons-Biomarker{
+    mask-image: url(/Themes/Aurora/icons/biomarker.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-[#FFFFFF99] ;
+}
+.Aurora-icons-Diagnosis{
+    mask-image: url(/Themes/Aurora/icons/diagnosis.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6  bg-[#FFFFFF99];
+}
+.Aurora-icons-Intervention{
+    mask-image: url(/Themes/Aurora/icons/trend-up.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6  bg-[#FFFFFF99];
+}
+.Aurora-icons-Timeline{
+    mask-image: url(/Themes/Aurora/icons/timeline.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6  bg-[#FFFFFF99];
+}
+.Aurora-icons-Messages{
+    mask-image: url(/Themes/Aurora/icons/messages.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6  bg-[#FFFFFF99];
+}
