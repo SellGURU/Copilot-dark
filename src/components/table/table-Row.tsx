@@ -3,7 +3,6 @@ import {FiExternalLink} from "react-icons/fi";
 import {Badge} from "../badge/badge.tsx";
 import {FC} from "react";
 import {PiChatBold} from "react-icons/pi";
-import {twMerge} from "tailwind-merge";
 import {useSelector} from "react-redux";
 
 interface TableRowProps {
@@ -49,92 +48,80 @@ export const TableRow: FC<TableRowProps> = ({
                                                 last
                                             }) => {
     const theme = useSelector((state: any) => state.theme.value.name)
-    console.log("theme:", theme)
     return (
         <>
             <tr className="text-white space-y-7 ">
 
                 <td
-                    className="flex items-center gap-3 py-2 pl-2 pr-10 text-white">
+                    className={`${theme}-Table-td text-xs flex items-center gap-3 py-2 pl-2 pr-10 text-white`}>
                     <img className="w-10 h-10 border rounded-full" src={imageSrc}
                          alt="Jese image"/>
                     <div className="">
-                        <div className="text-base font-semibold text-nowrap">{patient}</div>
+                        <div className="font-semibold text-nowrap">{patient}</div>
                     </div>
                     <Link to={externalLink}>
                         <FiExternalLink/>
                     </Link>
                 </td>
-                <td className="px-3 py-2 text-nowrap text-center">
+                <td className={`${theme}-Table-td`}>
                     {memberId}
                 </td>
-                <td className="px-3 py-2">
-                    <div className="flex items-center justify-center">
-                        {age}
-                    </div>
-                </td>
-                <td className="px-3 py-2 text-center">
-                    <div className={" flex items-center justify-center"}>
+                <td className={`${theme}-Table-td`}>
 
-                        {sex}
+                    {age}
 
-                    </div>
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
+                    {sex}
+                </td>
+                <td className={`${theme}-Table-td`}>
                     <div className={" flex items-center justify-center"}>
 
                         {weight}
                     </div>
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {enroll}
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {followUp}
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {last}
                 </td>
-                <td className="px-3 py-2 text-center ">
-                    <Badge color={twMerge(
-                        stateColor == "red" && `${theme}-Badge-Red `,
-                        stateColor == "yellow" && `${theme}-Badge-Yellow`,
-                        stateColor == "green" && `${theme}-Badge-Green`
-                    )}>
+                <td className={`${theme}-Table-td`}>
+                    <Badge color={stateColor}>
                         {state}
                     </Badge>
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {heartRate}
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {pressure}
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {temperature}
                 </td>
-                <td className="px-3 py-2 text-center ">
+                <td className={`${theme}-Table-td`}>
 
                     {oxygen}
                 </td>
-                <td className="px-3 py-2 ">
-                    <div className={"flex items-center justify-center"}>
-                        <Badge color={twMerge(
-                            lastColor == "none" && "bg-inherit",
-                            lastColor == "yellow" && `${theme}-Badge-Yellow`,
-                        )}>
+                <td className={`${theme}-Table-td`}>
+
+                        <Badge color={lastColor}>
                             {respiration}
                         </Badge>
-                    </div>
 
                 </td>
-                <td className="px-3 py-2 flex items-center justify-center">
+                <td className={`${theme}-Table-td`}>
+
                     <PiChatBold className={`${theme}-icons-PiChatBold`}/>
                 </td>
             </tr>

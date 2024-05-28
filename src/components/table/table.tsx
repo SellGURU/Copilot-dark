@@ -3,6 +3,7 @@ import {CustomButton} from "@/components/button/custom-button.tsx";
 import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {IoMdSearch} from "react-icons/io";
+import {useSelector} from "react-redux";
 
 export const Table = () => {
     const tdListNames = [
@@ -19,17 +20,20 @@ export const Table = () => {
         "Temperature",
         "Blood Oxygen",
         "Respiration Rate",
-        "Action"
+        "Action",
+
     ]
     const sortItems = (option: string) => {
         //     sort base on option
         //     TODO: write the sort
         console.log(option)
     }
+    const theme = useSelector((state: any) => state.theme.value.name)
+
     return (
-        <div className={"relative "}>
-            <div className="absolute w-[1276px] top-0 shadow-md sm:rounded-lg p-4 ">
-                <div className="flex overflow-hidden  flex-row gap-2 justify-end flex-wrap space-y-0 pb-4 ">
+        <div className={" "}>
+            <div className=" w-[1276px] top-0 shadow-md sm:rounded-lg p-4 ">
+                <div className={`${theme}-Table-header-section`}>
                     <label htmlFor="table-search" className="sr-only">
                         Search
                     </label>
@@ -41,7 +45,7 @@ export const Table = () => {
                         <input
                             type="text"
                             id="table-search-users"
-                            className="block p-2 ps-10 border-[#FFFFFF] border-opacity-15 text-sm text-gray-900 border rounded-lg w-80 bg-[#121212] focus:ring-blue-500 focus:border-blue-500"
+                            className={`${theme}-Table-search`}
                             placeholder="Search for users"
                         />
                     </div>
@@ -54,16 +58,16 @@ export const Table = () => {
                         Add Patient{" "}
                     </CustomButton>
                 </div>
-                <div className={"overflow-x-auto p-2  bg-[#1E1E1E] rounded-xl"}>
+                <div className={`${theme}-Table-container`}>
                     <table
-                        className="  border-collapse table-auto text-sm text-left rtl:text-right ">
-                        <thead className="text-xs text-gray-700 uppercase ">
+                        className={`${theme}-table`}>
+                        <thead className="text-xs text-gray-700  ">
                         <tr className={"text-nowrap text-[#FFFFFF]"}>
                             {tdListNames.map((name) => {
                                 return (
                                     <th
                                         onClick={() => sortItems(name)}
-                                        className="px-3 pt-4 pb-1 text-xs font-medium cursor-pointer"
+                                        className={`${theme}-Table-header`}
                                     >
                                         {name}
                                     </th>

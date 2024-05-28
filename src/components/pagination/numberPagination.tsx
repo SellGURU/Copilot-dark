@@ -13,7 +13,7 @@ export const NumberPagination: FC<NumberPaginationProps> = ({number, href, isCur
     return (
         <li {...props}>
             <a href={href ? href : ""} aria-current="page"
-               className={`${isCurrent?`${theme}-number-pagination`:`${theme}-number-pagination-select`} `}>{number}</a>
+               className={`${isCurrent?`${theme}-number-pagination-select `:`${theme}-number-pagination`} `}>{number}</a>
         </li>
     );
 };

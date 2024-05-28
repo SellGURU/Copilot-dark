@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {Table} from "@/components/table/table.tsx";
+import {Pagination} from "@/components/pagination/pagination.tsx";
 
 const Develop = () => {
     return (
@@ -14,12 +15,14 @@ const Develop = () => {
             {/*<GeneralReportCard/>*/}
 
             {/*</div>*/}
-            {/*<Pagination/>*/}
+
             {/*<div className={"w-1/2"}>*/}
 
             {/*</div>*/}
-
-            <Table/>
+            <div className={"flex items-center justify-center flex-col"}>
+                <Table/>
+                <Pagination/>
+            </div>
 
         </div>
     )

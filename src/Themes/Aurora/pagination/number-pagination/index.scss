@@ -1,11 +1,14 @@
 .Aurora-number-pagination {
-  @apply z-10 text-blue-600  border-blue-300 bg-[#121212] opacity-85 ;
+  @apply flex items-center justify-center px-4 h-10 leading-tight bg-[#1e1e1e] text-white #{!important};
 }
 
-.Aurora-number-pagination__select {
-  @apply bg-[#121212] opacity-95 flex text-white items-center justify-center px-4 h-10 leading-tight border hover:bg-gray-100 hover:text-gray-700
+.Aurora-number-pagination-select {
+  @apply bg-[#383838] flex items-center justify-center px-4 h-10 leading-tight text-white
 }
 
-.Aurora-number-pagination-arrow{
-  @apply flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg
+.Aurora-number-pagination-arrow-right{
+  @apply flex items-center justify-center px-4 h-10 ms-0 leading-tight bg-[#1e1e1e] rounded-s-lg text-white
+}
+.Aurora-number-pagination-arrow-left{
+  @apply flex items-center justify-center px-4 h-10 ms-0 leading-tight bg-[#1e1e1e]  rounded-e-lg text-white
 }

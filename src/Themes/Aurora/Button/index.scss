@@ -5,3 +5,6 @@
 .Aurora-Button-container-disabled {
   @apply opacity-[50%] #{!important};
 }
+.Aurora-Button-primary{
+@apply bg-[#03DAC5] w-fit py-2 gap-2 px-3 text-[14px] border rounded-xl border-black text-[#121212] disabled:opacity-50 flex items-center justify-between
+}
