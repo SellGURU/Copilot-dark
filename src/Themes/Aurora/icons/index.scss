@@ -108,3 +108,22 @@
 .Aurora-icons-PiChatBold{
     @apply text-[#03DAC5] w-6 h-6
 }
+.Aurora-icons-calender{
+    mask-image: url(/Themes/Aurora/icons/messages.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-brand-secondary-color ;
+    
+}
+.Aurora-icons-check{
+    mask-image: url(/Themes/Aurora/icons/check.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-black
+     ;
+    
+}
