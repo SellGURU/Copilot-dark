@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {TableRow} from "./table-Row.tsx";
 import {CustomButton} from "@/components/button/custom-button.tsx";
 import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
-import {IoMdSearch} from "react-icons/io";
 import {useSelector} from "react-redux";
-import {Pagination} from "@/components";
+import {Pagination, SearchBox} from "@/components";
 import {tdListNames} from "./tableTd.ts"
 
 export const Table = () => {
@@ -23,18 +23,7 @@ export const Table = () => {
                     <label htmlFor="table-search" className="sr-only">
                         Search
                     </label>
-                    <div className="relative">
-                        <div
-                            className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <IoMdSearch className={"w-4 h-4 text-gray-500"}/>
-                        </div>
-                        <input
-                            type="text"
-                            id="table-search-users"
-                            className={`${theme}-Table-search`}
-                            placeholder="Search for users"
-                        />
-                    </div>
+                    <SearchBox theme={theme} placeholder="Search for users"></SearchBox>
                     <CustomButton className={"hi"}>
                         <TbFilterPlus className={"w-5 h-5"}/>
                         Apply Filter
