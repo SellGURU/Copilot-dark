@@ -26,7 +26,7 @@ ChartJS.register(
   annotationPlugin,
 );
 
-export const Mixed2LinesChart = () => {
+export const MixedLinesChart = () => {
   const chartRef = useRef<ChartJS<"line">>(null);
 
   const data = {
@@ -134,4 +134,3 @@ export const Mixed2LinesChart = () => {
   );
 };
 
-export default  Mixed2LinesChart;

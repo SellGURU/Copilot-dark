@@ -1,3 +1,4 @@
 
-export {LineChart} from './lineChart';
-export {Mixed2LinesChart} from './mixedLinesChart';
+import {LineChart} from './lineChart';
+import {MixedLinesChart} from './mixedLinesChart'
+export default {LineChart , MixedLinesChart};
