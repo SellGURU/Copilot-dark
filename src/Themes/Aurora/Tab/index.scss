@@ -2,7 +2,10 @@
   @apply  flex justify-center  rounded-2xl ;
 }
 .Aurora-tab {
-  @apply flex gap-1 items-center bg-black-primary justify-center cursor-pointer px-6 py-3 border-r border-main-border;
+  @apply flex gap-1 items-center bg-black-secondary justify-center cursor-pointer px-6 py-3 border-r border-main-border;
+}
+.Aurora-tab-icon-container{
+  @apply flex items-center justify-center px-4 py-3 bg-black-secondary rounded-xl;
 }
 .Aurora-tab[data-active="true"] {
   @apply bg-[#03DAC5];

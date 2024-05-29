@@ -1,15 +1,15 @@
-import { useState } from "react";
-import arrowleft from "../../../public/Themes/Aurora/icons/arrow-left.svg";
+import React from "react";
+import  { useState } from "react";
 import { TabsInfo } from ".";
-import { Tab } from "./Tab";
+import { Tab } from "./tab";
 import { useSelector } from "react-redux";
-export const TabsWrapper = () => {
+ const TabsWrapper = () => {
   const [active, setActive] = useState("Overview");
   const theme = useSelector((state: any) => state.theme.value.name);
   return (
-    <div className="flex  justify-center items-center gap-2 ">
-      <div className="bg-black-primary flex justify-center items-center px-4 py-3 rounded-xl">
-        <img className='object-contain' src={arrowleft}  alt="back" />
+    <div className="flex  items-center gap-2 ">
+      <div className={`${theme}-tab-icon-container`}>
+        <img className={`${theme}-icons-arrow-left`} />
       </div>
       <div className={`${theme}-tab-container`}>
         {TabsInfo.map((item, index) => (
@@ -26,3 +26,4 @@ export const TabsWrapper = () => {
     </div>
   );
 };
+export default TabsWrapper;

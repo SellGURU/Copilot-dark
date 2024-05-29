@@ -124,7 +124,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   return (
     <div className="p-5 relative">
       <Line ref={chartRef} data={chartData} options={lineChartOptions} />
-      <h2 className="text-[#FFFFFF99] font-semibold absolute -top-1 left-4">bpm</h2>
+      <h2 className="text-primary-text font-semibold absolute -top-1 left-4">bpm</h2>
     </div>
   );
 };

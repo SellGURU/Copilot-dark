@@ -14,8 +14,6 @@ import {
   Chart,
   ChartOptions,
 } from "chart.js";
-import "chartjs-adapter-date-fns";
-
 ChartJS.register(
   LineElement,
   CategoryScale,
@@ -121,7 +119,7 @@ export const Mixed2LinesChart = () => {
       if(ctx){
       ctx.save();
       ctx.globalCompositeOperation = 'destination-over';
-      ctx.fillStyle = '#121212'; // Set your background color here
+      ctx.fillStyle = '#121212'; 
       ctx.fillRect(0, 0, chart.width, chart.height);
       ctx.restore();
       }
