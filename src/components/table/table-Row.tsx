@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {FiExternalLink} from "react-icons/fi";
-import {Badge} from "../badge/badge.tsx";
+import {Badge} from "../badge";
 import {FC} from "react";
 import {PiChatBold} from "react-icons/pi";
 import {useSelector} from "react-redux";

@@ -7,11 +7,12 @@ export const Pagination = () => {
     return (
 
 
-        <nav aria-label="Page navigation">
+        <nav aria-label="Page navigation ">
             <ul className="flex items-center -space-x-px h-8 text-base">
                 <li>
                     <a href="#"
-                       className={`${theme}-number-pagination-arrow-right`}>
+                       data-diraction-arow={"right"}
+                       className={`${theme}-number-pagination-arrow-container`}>
                         <span className="sr-only">Previous</span>
                         <svg className="w-3 h-3 rtl:rotate-180" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
@@ -26,7 +27,8 @@ export const Pagination = () => {
 
                 <li>
                     <a href="#"
-                       className={`${theme}-number-pagination-arrow-left`}>
+                       data-diraction-arow={"left"}
+                       className={`${theme}-number-pagination-arrow-container`}>
                         <span className="sr-only">Next</span>
                         <svg className="w-3 h-3 rtl:rotate-180" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">

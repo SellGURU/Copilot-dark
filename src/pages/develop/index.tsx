@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {Table} from "@/components/table/table.tsx";
-import {Pagination} from "@/components/pagination/pagination.tsx";
+import {Table} from "@/components";
+import {GeneralReportCard} from "@/components/general-report/general-report-card.tsx";
 
 const Develop = () => {
     return (
@@ -15,13 +15,18 @@ const Develop = () => {
             {/*<GeneralReportCard/>*/}
 
             {/*</div>*/}
+            <div className={"py-5 px-10 space-y-5"}>
+                <h1 className={"text-base text-primary-text font-medium"}>General Report</h1>
+                <div className={"flex  items-center justify-between "}>
+                    <GeneralReportCard/>
+                    <GeneralReportCard/>
+                    <GeneralReportCard/>
+                    <GeneralReportCard/>
+                </div>
+            </div>
 
-            {/*<div className={"w-1/2"}>*/}
-
-            {/*</div>*/}
             <div className={"flex items-center justify-center flex-col"}>
                 <Table/>
-                <Pagination/>
             </div>
 
         </div>

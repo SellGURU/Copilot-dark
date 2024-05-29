@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element:<PatientList></PatientList>,
         children:[
           {
-            path:'/infographic',
+            path:'infographic',
             element:<InfoGraphic></InfoGraphic>
           }
         ]

@@ -1,5 +1,7 @@
-import SideMenu from './sideMenu'
-import {Table} from './table/table'
+import SideMenu from "./SideMenu";
 import TopBar from './topBar'
-
-export {SideMenu,TopBar,Table}
+import {Pagination} from "@/components/pagination";
+import {Table} from "@/components/table/index.tsx"
+import {Badge} from "@/components/badge"
+import  {CardWrapper} from "@/components/cardWrapper"
+export {SideMenu, TopBar, Pagination, Table, Badge,CardWrapper}

@@ -1,10 +1,10 @@
-import { Table } from "@/components"
+// import { Index } from "@/components"
 
 const PatientList = () => {
     return (
         <>
         <div>
-            <Table></Table>
+            {/*<Index></Index>*/}
         </div>
         </>
     )

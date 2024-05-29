@@ -6,12 +6,13 @@ interface CustomButtonProps {
     children: React.ReactNode;
     className?: string;
 }
-export const CustomButton:FC<CustomButtonProps> = ({children,className,...props}) => {
+
+export const CustomButton: FC<CustomButtonProps> = ({children, className, ...props}) => {
     const theme = useSelector((state: any) => state.theme.value.name)
 
     return (
         <>
-        <button className={twMerge(`${theme}-Button-primary`,className)} {...props}>{children}</button>
+            <button className={twMerge(`${theme}-Button-primary`, className)} {...props}>{children}</button>
         </>
     );
 };

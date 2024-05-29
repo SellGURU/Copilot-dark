@@ -4,25 +4,11 @@ import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {IoMdSearch} from "react-icons/io";
 import {useSelector} from "react-redux";
+import {Pagination} from "@/components";
+import {tdListNames} from "./tableTd.ts"
 
 export const Table = () => {
-    const tdListNames = [
-        "Patient Name (48)",
-        "Member ID",
-        "Age",
-        "sex",
-        "Weight",
-        "Enroll Date",
-        "Last Follow-up",
-        "",
-        "Heart Rate",
-        "Blood Pressure",
-        "Temperature",
-        "Blood Oxygen",
-        "Respiration Rate",
-        "Action",
 
-    ]
     const sortItems = (option: string) => {
         //     sort base on option
         //     TODO: write the sort
@@ -31,7 +17,7 @@ export const Table = () => {
     const theme = useSelector((state: any) => state.theme.value.name)
 
     return (
-        <div className={" "}>
+        <div className={" flex items-center justify-center gap-3 flex-col"}>
             <div className=" w-full top-0 shadow-md sm:rounded-lg p-4 ">
                 <div className={`${theme}-Table-header-section`}>
                     <label htmlFor="table-search" className="sr-only">
@@ -159,7 +145,7 @@ export const Table = () => {
                         <TableRow
                             imageSrc={"/pic/ava1.svg"}
                             lastColor={"yellow"}
-                              stateColor={"green"}
+                            stateColor={"green"}
                             patient={"Michael Brown"}
                             memberId={"021548461651"}
                             age={"48"}
@@ -179,7 +165,7 @@ export const Table = () => {
                         />
                         <TableRow
                             imageSrc={"/pic/ava2.svg"}
-                              stateColor={"green"}
+                            stateColor={"green"}
                             patient={"Michael Brown"}
                             memberId={"021548461651"}
                             age={"48"}
@@ -200,8 +186,10 @@ export const Table = () => {
 
                         </tbody>
                     </table>
+
                 </div>
             </div>
+            <Pagination/>
         </div>
     );
 }

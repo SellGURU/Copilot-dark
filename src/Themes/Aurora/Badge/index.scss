@@ -1,9 +1,12 @@
-.Aurora-Badge-Yellow{
-  @apply bg-[#FBAD37] text-center rounded-xl py-1 px-3 text-xs w-fit text-white text-nowrap
+.Aurora-Badge-container{
+  @apply text-center rounded-xl py-1 px-3 text-xs w-fit text-white text-nowrap
 }
-.Aurora-Badge-Green{
-  @apply bg-[#06C78D]  text-center rounded-xl py-1 px-3 text-xs w-fit text-white text-nowrap
+.Aurora-Badge-container[data-color="yellow"]{
+  @apply bg-[#FBAD37]
 }
-.Aurora-Badge-Red{
-  @apply bg-[#FC5474] text-center rounded-xl py-1 px-3 text-xs w-fit text-white text-nowrap
+.Aurora-Badge-container[data-color="green"]{
+  @apply bg-[#06C78D]
+}
+.Aurora-Badge-container[data-color="red"]{
+  @apply bg-[#FC5474]
 }
