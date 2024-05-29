@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Develop, Home, PatientList } from "../pages";
+import { Develop, Home, InfoGraphic, PatientList } from "../pages";
 import Layout from '@/Themes/index'
 const router = createBrowserRouter([
   {
@@ -16,7 +16,13 @@ const router = createBrowserRouter([
       },
       {
         path:'/patientList',
-        element:<PatientList></PatientList>
+        element:<PatientList></PatientList>,
+        children:[
+          {
+            path:'/infographic',
+            element:<InfoGraphic></InfoGraphic>
+          }
+        ]
       }
     ]
   },
