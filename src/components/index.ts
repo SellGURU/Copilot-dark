@@ -1,4 +1,4 @@
-import SideMenu from "./SideMenu";
+import SideMenu from "./sideMenu";
 import TopBar from './topBar'
 import {Pagination} from "@/components/pagination";
 import {Table} from "@/components/table/index.tsx"

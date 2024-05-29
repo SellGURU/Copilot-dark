@@ -1,8 +1,8 @@
 .Aurora-SideMenu-container{
-    @apply flex 
+    @apply flex h-screen overflow-y-auto 
 }
 .Aurora-SideMenu-nav{
-    @apply w-[80px] relative z-[41] bg-black-primary  h-screen border-black-fourth border-r 
+    @apply w-[80px] fixed z-[41] bg-black-primary  h-screen border-black-fourth border-r 
 }
 .Aurora-SideMenu-logo-container{
     @apply flex mt-5 w-full justify-center 
@@ -35,5 +35,5 @@
 }
 
 .Aurora-SideMenu-content{
-    @apply w-full pt-[82px]
+    @apply w-full py-[82px] pl-[80px] 
 }
