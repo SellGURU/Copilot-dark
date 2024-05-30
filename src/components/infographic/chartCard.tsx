@@ -1,5 +1,6 @@
-import { LineChart } from "../charts";
+
 import bellIcon from "../../../public/Themes/Aurora/icons/bell-icon.svg";
+import { LineChart } from "../charts/LineChart";
 interface chartCardProps {
   type : string,
   value: number,

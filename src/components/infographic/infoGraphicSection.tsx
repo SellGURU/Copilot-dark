@@ -1,11 +1,10 @@
+
 import { btnInfo, chartsInfo } from ".";
 import { useState } from "react";
 import { InfoGraghicBtn } from "./InfoGraghicBtn";
-
-import { InfoGraphicMain } from "./infoGraphicMain";
 import { ChartCard } from "./chartCard";
-interface btnInfo{}
-export const InfoGraphic = () => {
+import { InfoGraphicMain } from "./infoGraphicMainSection";
+export const InfoGraphicSection = () => {
     const [active, setActive] = useState(btnInfo[1].text)
   return (
     <div className="flex justify-center w-full mx-auto max-w[1440px] bg-black-background  py-5   gap-5 ">
