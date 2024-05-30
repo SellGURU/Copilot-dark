@@ -8,7 +8,7 @@ const Home = () => {
         <Pagination/>
             <h1>home</h1>
             {/* <TabsWrapper /> */}
-            <InfoGraphic />
+          
             </div>
     )
 }

@@ -3,7 +3,7 @@ import { Table } from "@/components"
 const PatientList = () => {
     return (
         <>
-        <div>
+        <div className="bg-black-background w-full h-full" >
             <Table></Table>
         </div>
         </>
