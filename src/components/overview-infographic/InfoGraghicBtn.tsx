@@ -55,7 +55,7 @@ export const InfoGraghicBtn = ({
   };
 
   return (
-    <div className="">
+    <>
       <div data-isActive={active===text} onClick={handleClick} className={`${theme}-graphicinfo-btn-container`}>
         <div className="flex items-center gap-1">
           <h2 className={`${theme}-graphicinfo-btn-text`}>{text}</h2>
@@ -90,6 +90,6 @@ export const InfoGraghicBtn = ({
             ))}
           </div>
       </div>
-    </div>
+      </>
   );
 };

@@ -4,12 +4,12 @@ import { InfoGraphic } from "@/components/overview-infographic/InfoGraphic";
 
 const Home = () => {
     return (
-        <>
-            <Pagination/>
+        <div className="bg-black-background">
+        <Pagination/>
             <h1>home</h1>
             {/* <TabsWrapper /> */}
             <InfoGraphic />
-        </>
+            </div>
     )
 }
 

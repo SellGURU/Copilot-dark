@@ -1,5 +1,5 @@
 .Aurora-graphicinfo-btn-container {
-  @apply flex justify-between bg-black-secondary p-3 cursor-pointer select-none;
+  @apply flex justify-between bg-black-primary w-full  min-w-[312px] px-4 py-3 cursor-pointer select-none;
 }
 .Aurora-graphicinfo-btn-text {
   @apply text-primary-text font-medium;
@@ -13,6 +13,18 @@
 .Aurora-graphicinfo-btn-number {
   @apply text-brand-primary-color text-[12px] font-normal;
 }
-.Aurora-graphicinfo-btn-list-container{
-    @apply w-full bg-black-background flex border-t border-main-border flex-col gap-5 p-5;
+.Aurora-graphicinfo-btn-list-container {
+  @apply w-full bg-black-background flex border border-t rounded-xl border-main-border flex-col gap-5 p-4;
+}
+.Aurora-graphicinfo-patientinfo-Activity-position {
+  @apply bottom-56 left-10;
+}
+.Aurora-graphicinfo-patientinfo-Nutritions-position {
+  @apply top-24 left-10;
+}
+.Aurora-graphicinfo-patientinfo-Sleep-position {
+  @apply top-24 right-10;
+}
+.Aurora-graphicinfo-patientinfo-Mind-position {
+  @apply bottom-56 right-10;
 }
