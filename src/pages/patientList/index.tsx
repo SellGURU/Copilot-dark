@@ -3,11 +3,11 @@
 const PatientList = () => {
     return (
         <>
-        <div>
-            {/*<Index></Index>*/}
+        <div className="bg-black-background w-full h-full" >
+            <Table></Table>
         </div>
         </>
     )
 }
 
-export default PatientList
+export default PatientList;

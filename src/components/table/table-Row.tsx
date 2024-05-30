@@ -59,7 +59,7 @@ export const TableRow: FC<TableRowProps> = ({
                     <div className="">
                         <div className="font-semibold text-nowrap">{patient}</div>
                     </div>
-                    <Link to={externalLink}>
+                    <Link to='/patientList/infoGraphic'>
                         <FiExternalLink/>
                     </Link>
                 </td>

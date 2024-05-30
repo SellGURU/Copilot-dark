@@ -1,5 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+<<<<<<< HEAD
 import { Develop, Home, InfoGraphic, PatientList } from "../pages";
+=======
+import { Develop, Home, PatientList } from "../pages";
+import { InfoGraphic } from "@/components/overview-infographic/InfoGraphic";
+>>>>>>> overview-infoGraphic
 import Layout from '@/Themes/index'
 const router = createBrowserRouter([
   {
@@ -17,12 +22,7 @@ const router = createBrowserRouter([
       {
         path:'/patientList',
         element:<PatientList></PatientList>,
-        children:[
-          {
-            path:'infographic',
-            element:<InfoGraphic></InfoGraphic>
-          }
-        ]
+  
       }
     ]
   },
