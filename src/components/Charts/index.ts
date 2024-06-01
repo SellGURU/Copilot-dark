@@ -1,4 +1,3 @@
-
-import {LineChart} from './lineChart';
+import {LineChart} from './LineChart';
 import {MixedLinesChart} from './mixedLinesChart'
 export default {LineChart , MixedLinesChart};

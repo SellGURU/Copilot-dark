@@ -1,11 +1,10 @@
-import { useSelector } from "react-redux";
-interface BackTabProps {
+interface TabProps {
   text: string;
-  
   active: string;
   setActive: React.Dispatch<React.SetStateAction<string>>;
   isFirst?: boolean;
   isLast?: boolean;
+  theme:string
 }
 export const Tab = ({
   text,
@@ -13,8 +12,8 @@ export const Tab = ({
   setActive,
   isFirst,
   isLast,
-}: BackTabProps) => {
-  const theme = useSelector((state: any) => state.theme.value.name);
+  theme
+}: TabProps) => {
   return (
     <div
       data-active={active === text}

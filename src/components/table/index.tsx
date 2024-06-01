@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {TableRow} from "./table-Row.tsx";
-import {CustomButton} from "@/components/button/custom-button.tsx";
 import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {useSelector} from "react-redux";
 import {Pagination, SearchBox} from "@/components";
 import {tdListNames} from "./tableTd.ts"
 import {fakeData} from "@/components/table/fakeData.ts";
+import { Button } from "symphony-ui";
 
 export const Table = () => {
 
@@ -81,7 +81,7 @@ export const Table = () => {
 
                 </div>
             </div>
-            <Pagination/>
+            <Pagination theme={theme}/>
         </div>
     );
 }

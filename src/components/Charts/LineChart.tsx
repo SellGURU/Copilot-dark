@@ -12,6 +12,7 @@ import {
   ChartOptions,
 } from "chart.js";
 import "chartjs-adapter-date-fns";
+
 ChartJS.register(
   LineElement,
   CategoryScale,
@@ -23,8 +24,9 @@ ChartJS.register(
 );
 interface LineChartProps {
   model: string;
+  title : string
 }
-export const LineChart: React.FC<LineChartProps> = ({ model }) => {
+export const LineChart: React.FC<LineChartProps> = ({ model , title }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
   const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
   const xData = useMemo(
@@ -98,7 +100,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
 
     return {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       scales: {
         x: {
           ticks: {
@@ -122,9 +124,13 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   }, [model]);
 
   return (
-    <div className="p-5 relative">
+    <div className="p-3 rounded-xl border border-main-border bg-black-secondary relative">
+      <div className="flex  w-full justify-between ">
+      <h2 className="text-primary-text font-semibold ">{title}</h2>   
+        <h2 className="text-brand-primary-color font-semibold">24 May, 2024</h2> 
+      </div>
       <Line ref={chartRef} data={chartData} options={lineChartOptions} />
-      <h2 className="text-primary-text font-semibold absolute -top-1 left-4">bpm</h2>
+     
     </div>
   );
 };

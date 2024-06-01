@@ -1,13 +1,28 @@
 // import { Index } from "@/components"
+import { Table } from "@/components";
+import NumberBox from "@/components/numberBox/numberBox";
+import { useSelector } from "react-redux";
+import { Outlet } from 'react-router-dom';
 
 const PatientList = () => {
+    const theme = useSelector((state: any) => state.theme.value.name)
     return (
         <>
-        <div>
-            {/*<Index></Index>*/}
+        <div className="bg-black-background w-full h-screen px-8" >
+            <div className={"py-5 space-y-5"}>
+                <h1 className={"text-base text-primary-text font-medium"}>General Report</h1>
+                <div className={"flex  items-center justify-between "}>
+                    <NumberBox theme={theme}/>
+                    <NumberBox theme={theme}/>
+                    <NumberBox theme={theme}/>
+                    <NumberBox theme={theme}/>
+                </div>
+            </div>            
+            <Table></Table>
+            <Outlet /> 
         </div>
         </>
     )
 }
 
-export default PatientList
+export default PatientList;

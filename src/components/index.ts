@@ -1,9 +1,11 @@
 import SideMenu from "@/components/SideMenu";
 import TopBar from './topBar'
-import {Pagination} from "@/components/pagination";
+import Pagination from "@/components/pagination";
 import SearchBox from "./searchBox";
 import {Table} from "@/components/table/index.tsx"
 import {Badge} from "@/components/badge"
-import  {CardWrapper} from "@/components/cardWrapper"
+import Card from "./card"
 
-export {SideMenu, TopBar, Pagination,SearchBox, Table, Badge,CardWrapper}
+export {
+    SideMenu, TopBar, Pagination,SearchBox, Table, Badge,Card
+}

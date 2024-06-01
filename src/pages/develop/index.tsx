@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {Table} from "@/components";
-import {GeneralReportCard} from "@/components/general-report/general-report-card.tsx";
+import NumberBox from "@/components/numberBox/numberBox";
+import { useSelector } from "react-redux";
 
 const Develop = () => {
+    const theme = useSelector((state: any) => state.theme.value.name)
     return (
         <div>
             <div>
@@ -18,10 +20,10 @@ const Develop = () => {
             <div className={"py-5 px-10 space-y-5"}>
                 <h1 className={"text-base text-primary-text font-medium"}>General Report</h1>
                 <div className={"flex  items-center justify-between "}>
-                    <GeneralReportCard/>
-                    <GeneralReportCard/>
-                    <GeneralReportCard/>
-                    <GeneralReportCard/>
+                    <NumberBox theme={theme}/>
+                    <NumberBox theme={theme}/>
+                    <NumberBox theme={theme}/>
+                    <NumberBox theme={theme}/>
                 </div>
             </div>
 

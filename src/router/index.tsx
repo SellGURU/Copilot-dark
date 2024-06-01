@@ -1,31 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Develop, Home, InfoGraphic, PatientList } from "../pages";
-import Layout from '@/Themes/index'
+import { Develop, Home, PatientList , InfoGraphic } from "../pages";
+import Layout from "@/Themes/index";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children:[
+    children: [
       {
-        path:'/',
-        element: <Home />
-      },      
-      {
-        path:'/develop',
-        element: <Develop></Develop>
+        path: "/",
+        element: <Home />,
       },
       {
-        path:'/patientList',
-        element:<PatientList></PatientList>,
-        children:[
-          {
-            path:'infographic',
-            element:<InfoGraphic></InfoGraphic>
-          }
-        ]
-      }
-    ]
+        path: "/develop",
+        element: <Develop></Develop>,
+      },
+      {
+        path: "/patientList",
+        element : <PatientList/>,
+        
+      },
+      {
+        path: "/patientList/infoGraphic",
+        element: <InfoGraphic />,
+      },
+      
+    ],
   },
 ]);
 
-export default router
+export default router;
