@@ -1,12 +1,11 @@
 import {NumberPagination} from "@/components/pagination/numberPagination.tsx";
-import {useSelector} from "react-redux";
 
-export const Pagination = () => {
-    const theme = useSelector((state: any) => state.theme.value.name)
+interface PaginationProps {
+    theme:string
+}
 
+const Pagination:React.FC<PaginationProps> = ({theme}) => {
     return (
-
-
         <nav aria-label="Page navigation ">
             <ul className="flex items-center -space-x-px h-8 text-base">
                 <li>
@@ -21,9 +20,9 @@ export const Pagination = () => {
                         </svg>
                     </a>
                 </li>
-                <NumberPagination number={1} isCurrent={false} href={""}/>
-                <NumberPagination number={1} isCurrent={true} href={""}/>
-                <NumberPagination number={1} isCurrent={false} href={""}/>
+                <NumberPagination theme={theme} number={1} isCurrent={false} href={""}/>
+                <NumberPagination theme={theme} number={1} isCurrent={true} href={""}/>
+                <NumberPagination theme={theme} number={1} isCurrent={false} href={""}/>
 
                 <li>
                     <a href="#"
@@ -44,6 +43,7 @@ export const Pagination = () => {
     );
 };
 
+export default Pagination
 
 // <nav aria-label="Page navigation example">
 //     <ul className="flex items-center -space-x-px h-8 text-sm">

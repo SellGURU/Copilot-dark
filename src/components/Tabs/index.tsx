@@ -1,9 +1,9 @@
-import React from "react";
 import  { useState } from "react";
 import { TabsInfo } from "./tabsInfo";
-import { Tab } from "./tab";
+import { Tab } from "./Tab";
 import { useSelector } from "react-redux";
- const TabsWrapper = () => {
+
+const TabsWrapper = () => {
   const [active, setActive] = useState("Overview");
   const theme = useSelector((state: any) => state.theme.value.name);
   return (
@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
       <div className={`${theme}-tab-container`}>
         {TabsInfo.map((item, index) => (
           <Tab
+            theme={theme}
             key={item.text}
             text={item.text}
             active={active}

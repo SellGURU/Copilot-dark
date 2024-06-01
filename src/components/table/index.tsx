@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {TableRow} from "./table-Row.tsx";
-import {CustomButton} from "@/components/button/custom-button.tsx";
 import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {useSelector} from "react-redux";
 import {Pagination, SearchBox} from "@/components";
 import {tdListNames} from "./tableTd.ts"
+import { Button } from "symphony-ui";
 
 export const Table = () => {
 
@@ -24,14 +24,18 @@ export const Table = () => {
                         Search
                     </label>
                     <SearchBox theme={theme} placeholder="Search for users"></SearchBox>
-                    <CustomButton className={"hi"}>
+                    {/* <CustomButton className={"hi"}>
                         <TbFilterPlus className={"w-5 h-5"}/>
                         Apply Filter
-                    </CustomButton>
-                    <CustomButton className={"hi"}>
+                    </CustomButton> */}
+                    <Button theme={theme}>
+                        <TbFilterPlus className={"w-5 h-5"}/>
+                        Apply Filter                        
+                    </Button>
+                    <Button theme={theme}>
                         <RiUserAddLine className={"w-5 h-5"}/>
                         Add Patient{" "}
-                    </CustomButton>
+                    </Button>
                 </div>
                 <div className={`${theme}-Table-container`}>
                     <table
@@ -178,7 +182,7 @@ export const Table = () => {
 
                 </div>
             </div>
-            <Pagination/>
+            <Pagination theme={theme}/>
         </div>
     );
 }
