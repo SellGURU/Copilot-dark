@@ -18,7 +18,7 @@ export const Table = () => {
 
     return (
         <div className={" flex items-center justify-center gap-3 flex-col"}>
-            <div className=" w-full top-0 shadow-md sm:rounded-lg p-4 ">
+            <div className=" w-full top-0 shadow-md sm:rounded-lg ">
                 <div className={`${theme}-Table-header-section`}>
                     <label htmlFor="table-search" className="sr-only">
                         Search
