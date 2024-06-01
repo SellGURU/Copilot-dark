@@ -6,6 +6,7 @@ import {RiUserAddLine} from "react-icons/ri";
 import {useSelector} from "react-redux";
 import {Pagination, SearchBox} from "@/components";
 import {tdListNames} from "./tableTd.ts"
+import {fakeData} from "@/components/table/fakeData.ts";
 
 export const Table = () => {
 
@@ -24,11 +25,11 @@ export const Table = () => {
                         Search
                     </label>
                     <SearchBox theme={theme} placeholder="Search for users"></SearchBox>
-                    <CustomButton className={"hi"}>
+                    <CustomButton >
                         <TbFilterPlus className={"w-5 h-5"}/>
                         Apply Filter
                     </CustomButton>
-                    <CustomButton className={"hi"}>
+                    <CustomButton>
                         <RiUserAddLine className={"w-5 h-5"}/>
                         Add Patient{" "}
                     </CustomButton>
@@ -51,127 +52,29 @@ export const Table = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        <TableRow
-                            imageSrc={"/pic/ava1.svg"}
-                            stateColor={"red"}
-                            patient={"Michael Brown"}
-                            memberId={"021548461651"}
-                            age={"48"}
-                            sex={"Male"}
-                            weight={"56.3"}
-                            enroll={"04/25/2024"}
-                            last={""}
-                            state={"Critical"}
-                            followUp={"hi"}
-                            heartRate={"54"}
-                            pressure={"113/62"}
-                            temperature={"36.9"}
-                            oxygen={"92"}
-                            respiration={"10"}
-                            action={"1"}
-                            externalLink={"#"}
-                        />
-                        <TableRow
-                            imageSrc={"/pic/ava1.svg"}
-                            stateColor={"red"}
-                            patient={"Michael Brown"}
-                            memberId={"021548461651"}
-                            age={"48"}
-                            sex={"Male"}
-                            weight={"56.3"}
-                            enroll={"04/25/2024"}
-                            last={""}
-                            state={"Critical"}
-                            followUp={"hi"}
-                            heartRate={"54"}
-                            pressure={"113/62"}
-                            temperature={"36.9"}
-                            oxygen={"92"}
-                            respiration={"10"}
-                            action={"1"}
-                            externalLink={"#"}
-                        />
-                        <TableRow
-                            imageSrc={"/pic/ava1.svg"}
-                            stateColor={"yellow"}
-                            patient={"Michael Brown"}
-                            memberId={"021548461651"}
-                            age={"48"}
-                            sex={"Male"}
-                            weight={"56.3"}
-                            enroll={"04/25/2024"}
-                            last={""}
-                            state={"Critical"}
-                            followUp={"hi"}
-                            heartRate={"54"}
-                            pressure={"113/62"}
-                            temperature={"36.9"}
-                            oxygen={"92"}
-                            respiration={"10"}
-                            action={"1"}
-                            externalLink={"#"}
-                        />
-                        <TableRow
-                            imageSrc={"/pic/ava2.svg"}
-                            stateColor={"green"}
-                            patient={"Michael Brown"}
-                            memberId={"021548461651"}
-                            age={"48"}
-                            sex={"Male"}
-                            weight={"56.3"}
-                            enroll={"04/25/2024"}
-                            last={""}
-                            state={"Critical"}
-                            followUp={"hi"}
-                            heartRate={"54"}
-                            pressure={"113/62"}
-                            temperature={"36.9"}
-                            oxygen={"92"}
-                            respiration={"10"}
-                            action={"1"}
-                            externalLink={"#"}
-                        />
-                        <TableRow
-                            imageSrc={"/pic/ava1.svg"}
-                            lastColor={"yellow"}
-                            stateColor={"green"}
-                            patient={"Michael Brown"}
-                            memberId={"021548461651"}
-                            age={"48"}
-                            sex={"Male"}
-                            weight={"56.3"}
-                            enroll={"04/25/2024"}
-                            last={""}
-                            state={"Critical"}
-                            followUp={"hi"}
-                            heartRate={"54"}
-                            pressure={"113/62"}
-                            temperature={"36.9"}
-                            oxygen={"92"}
-                            respiration={"10"}
-                            action={"1"}
-                            externalLink={"#"}
-                        />
-                        <TableRow
-                            imageSrc={"/pic/ava2.svg"}
-                            stateColor={"green"}
-                            patient={"Michael Brown"}
-                            memberId={"021548461651"}
-                            age={"48"}
-                            sex={"Male"}
-                            weight={"56.3"}
-                            enroll={"04/25/2024"}
-                            last={""}
-                            state={"Critical"}
-                            followUp={"hi"}
-                            heartRate={"54"}
-                            pressure={"113/62"}
-                            temperature={"36.9"}
-                            oxygen={"92"}
-                            respiration={"10"}
-                            action={"1"}
-                            externalLink={"#"}
-                        />
+                        {fakeData.map(item=>{
+                            return( <TableRow
+                                key={item.id}
+                                imageSrc={"/pic/ava1.svg"}
+                                stateColor={item.stateColor}
+                                patient={item.patient}
+                                memberId={ item.memberId }
+                                age={ item.age }
+                                sex={ item.sex}
+                                weight={ item.weight }
+                                enroll={item.enroll}
+                                last={item.last}
+                                state={item.state}
+                                followUp={item.followUp}
+                                heartRate={item.heartRate}
+                                pressure={item.pressure}
+                                temperature={item.temperature}
+                                oxygen={item.oxygen}
+                                respiration={item.respiration}
+                                action={"1"}
+                                externalLink={"#"}
+                            />)
+                        })}
 
                         </tbody>
                     </table>

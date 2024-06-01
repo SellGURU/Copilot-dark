@@ -25,7 +25,7 @@ const Develop = () => {
                 </div>
             </div>
 
-            <div className={"flex items-center justify-center flex-col"}>
+            <div className={"flex items-center w-full overflow-x-auto justify-center flex-col"}>
                 <Table/>
             </div>
 

@@ -1,4 +1,4 @@
-import SideMenu from "./sideMenu";
+import SideMenu from "@/components/SideMenu";
 import TopBar from './topBar'
 import {Pagination} from "@/components/pagination";
 import SearchBox from "./searchBox";
