@@ -1,20 +1,40 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {TableRow} from "./table-Row.tsx";
 import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {useSelector} from "react-redux";
 import {Pagination, SearchBox} from "@/components";
-import {tdListNames} from "./tableTd.ts"
+import {columns} from "./tableTd.tsx"
 import {fakeData} from "@/components/table/fakeData.ts";
-import { Button } from "symphony-ui";
+import {useState} from "react";
+import {
+    flexRender,
+    getCoreRowModel,
+    getFilteredRowModel,
+    getPaginationRowModel,
+    getSortedRowModel,
+    useReactTable
+} from "@tanstack/react-table";
+import {FaSort} from "react-icons/fa";
+
 
 export const Table = () => {
 
-    const sortItems = (option: string) => {
-        //     sort base on option
-        //     TODO: write the sort
-        console.log(option)
-    }
+    const [data, setData] = useState(fakeData);
+    const [columnFilters, setColumnFilters] = useState([]);
+
+    const table = useReactTable({
+        data,
+        columns,
+        state: {
+            columnFilters,
+        },
+        getCoreRowModel: getCoreRowModel(),
+        getFilteredRowModel: getFilteredRowModel(),
+        getPaginationRowModel: getPaginationRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        columnResizeMode: "onChange",
+    });
+
     const theme = useSelector((state: any) => state.theme.value.name)
 
     return (
@@ -25,57 +45,64 @@ export const Table = () => {
                         Search
                     </label>
                     <SearchBox theme={theme} placeholder="Search for users"></SearchBox>
-                    <CustomButton >
+                    <button className={`${theme}-Button-primary`}>
                         <TbFilterPlus className={"w-5 h-5"}/>
                         Apply Filter
-                    </CustomButton>
-                    <CustomButton>
+                    </button>
+                    <button className={`${theme}-Button-primary`}>
                         <RiUserAddLine className={"w-5 h-5"}/>
                         Add Patient{" "}
-                    </CustomButton>
+                    </button>
                 </div>
                 <div className={`${theme}-Table-container`}>
                     <table
                         className={`${theme}-table`}>
                         <thead className="text-xs text-gray-700  ">
-                        <tr className={"text-nowrap text-[#FFFFFF]"}>
-                            {tdListNames.map((name) => {
-                                return (
-                                    <th
-                                        onClick={() => sortItems(name)}
-                                        className={`${theme}-Table-header`}
-                                    >
-                                        {name}
-                                    </th>
-                                );
-                            })}
-                        </tr>
+                            {table.getHeaderGroups().map((headerGroup) => {
+                            return (
+                                <tr key={headerGroup.id} className={"text-nowrap text-[#FFFFFF]"}>
+                                    {headerGroup.headers.map((header) => {
+                                        console.log(header)
+                                        return (
+                                            <th
+                                                className={`${theme}-Table-header`}
+                                            >
+                                                <div className={"flex items-center justify-center"}>
+
+                                                    <>{header.column.columnDef.header}</>
+                                                    {header.column.getCanSort() && (
+                                                        <FaSort onClick={header.column.getToggleSortingHandler()}/>
+                                                    )}
+                                                    {
+                                                        // {
+                                                        //     asc: " 🔼",
+                                                        //     desc: " 🔽 ",
+                                                        // }[header.column.getIsSorted()]
+                                                    }
+                                                </div>
+                                            </th>
+                                        )
+                                    })}
+                                </tr>
+                            )
+                        })}
                         </thead>
                         <tbody>
-                        {fakeData.map(item=>{
-                            return( <TableRow
-                                key={item.id}
-                                imageSrc={"/pic/ava1.svg"}
-                                stateColor={item.stateColor}
-                                patient={item.patient}
-                                memberId={ item.memberId }
-                                age={ item.age }
-                                sex={ item.sex}
-                                weight={ item.weight }
-                                enroll={item.enroll}
-                                last={item.last}
-                                state={item.state}
-                                followUp={item.followUp}
-                                heartRate={item.heartRate}
-                                pressure={item.pressure}
-                                temperature={item.temperature}
-                                oxygen={item.oxygen}
-                                respiration={item.respiration}
-                                action={"1"}
-                                externalLink={"#"}
-                            />)
-                        })}
-
+                            {table.getRowModel().rows.map((row) => {
+                                    return (
+                                        <tr className="text-white space-y-7 ">
+                                            {row.getVisibleCells().map((cell) => {
+                                                    return (
+                                                        <td className={`${theme}-Table-td`}>
+                                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                        </td>
+                                                    )
+                                                }
+                                            )}
+                                        </tr>
+                                    )
+                                }
+                            )}
                         </tbody>
                     </table>
 

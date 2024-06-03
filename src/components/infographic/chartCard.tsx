@@ -1,6 +1,6 @@
 
 import bellIcon from "../../../public/Themes/Aurora/icons/bell-icon.svg";
-import { LineChart } from "../charts/LineChart";
+import {LineChart} from "@/components/Charts/LineChart.tsx";
 interface chartCardProps {
   type : string,
   value: number,
