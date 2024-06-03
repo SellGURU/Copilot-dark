@@ -19,7 +19,7 @@ import {FaSort} from "react-icons/fa";
 
 export const Table = () => {
 
-    const [data, setData] = useState(fakeData);
+    const [data] = useState(fakeData);
     const [columnFilters, setColumnFilters] = useState([]);
 
     const table = useReactTable({
