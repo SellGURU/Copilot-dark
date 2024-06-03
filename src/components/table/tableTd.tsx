@@ -36,7 +36,7 @@ export const columns: ColumnDef<TableRowProps>[] = [
         header: 'Patient Name',
         cell: ({row}) => {
             return (
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-start gap-4">
                     <img
                         className="w-10 h-10 border rounded-full"
                         src={row.original.imageSrc}
@@ -73,7 +73,7 @@ export const columns: ColumnDef<TableRowProps>[] = [
             )
         }
     }, {
-        accessorKey: 'Enroll',
+        accessorKey: 'enroll',
         header: 'Enroll',
     }, {
         accessorKey: 'state',
@@ -103,6 +103,7 @@ export const columns: ColumnDef<TableRowProps>[] = [
     }, {
         accessorKey: 'respiration',
         header: 'respiration',
+        filterFn: "includesString",
         cell: ({row})=>{
             return(
                 <Badge theme={Theme()} color={row.original.lastColor || ""}>

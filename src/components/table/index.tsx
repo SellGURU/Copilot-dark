@@ -32,7 +32,11 @@ export const Table = () => {
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        columnResizeMode: "onChange",
+        initialState: {
+            pagination: {
+                pageSize: 6, //custom default page size
+            }
+        }
     });
 
     const theme = useSelector((state: any) => state.theme.value.name)
@@ -45,6 +49,7 @@ export const Table = () => {
                     value,
                 })
         );
+    console.log("table.getState().pagination.pageIndex + 1",table.getState().pagination.pageIndex + 1,table.getPageCount())
     return (
         <div className={" flex items-center justify-center gap-3 flex-col"}>
             <div className=" w-full top-0 shadow-md sm:rounded-lg p-4 ">
@@ -71,7 +76,6 @@ export const Table = () => {
                             return (
                                 <tr key={headerGroup.id} className={"text-nowrap text-[#FFFFFF]"}>
                                     {headerGroup.headers.map((header) => {
-                                        console.log(header)
                                         return (
                                             <th
                                                 className={`${theme}-Table-header`}
@@ -117,7 +121,7 @@ export const Table = () => {
 
                 </div>
             </div>
-            <Pagination theme={theme}/>
+            <Pagination table={table} theme={theme}/>
         </div>
     );
 }
