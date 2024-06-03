@@ -36,7 +36,15 @@ export const Table = () => {
     });
 
     const theme = useSelector((state: any) => state.theme.value.name)
-
+    const onFilterChange = (id: string, value: string) =>
+        setColumnFilters((prev) =>
+            prev
+                .filter((f: any) => f.id !== id)
+                .concat({
+                    id,
+                    value,
+                })
+        );
     return (
         <div className={" flex items-center justify-center gap-3 flex-col"}>
             <div className=" w-full top-0 shadow-md sm:rounded-lg p-4 ">
@@ -44,7 +52,8 @@ export const Table = () => {
                     <label htmlFor="table-search" className="sr-only">
                         Search
                     </label>
-                    <SearchBox theme={theme} placeholder="Search for users"></SearchBox>
+                    <SearchBox changeHandler={(e: any) => onFilterChange("patient", e.target.value)} theme={theme}
+                               placeholder="Search for users"></SearchBox>
                     <button className={`${theme}-Button-primary`}>
                         <TbFilterPlus className={"w-5 h-5"}/>
                         Apply Filter
@@ -58,7 +67,7 @@ export const Table = () => {
                     <table
                         className={`${theme}-table`}>
                         <thead className="text-xs text-gray-700  ">
-                            {table.getHeaderGroups().map((headerGroup) => {
+                        {table.getHeaderGroups().map((headerGroup) => {
                             return (
                                 <tr key={headerGroup.id} className={"text-nowrap text-[#FFFFFF]"}>
                                     {headerGroup.headers.map((header) => {
@@ -88,21 +97,21 @@ export const Table = () => {
                         })}
                         </thead>
                         <tbody>
-                            {table.getRowModel().rows.map((row) => {
-                                    return (
-                                        <tr className="text-white space-y-7 ">
-                                            {row.getVisibleCells().map((cell) => {
-                                                    return (
-                                                        <td className={`${theme}-Table-td`}>
-                                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                                        </td>
-                                                    )
-                                                }
-                                            )}
-                                        </tr>
-                                    )
-                                }
-                            )}
+                        {table.getRowModel().rows.map((row) => {
+                                return (
+                                    <tr className="text-white space-y-7 ">
+                                        {row.getVisibleCells().map((cell) => {
+                                                return (
+                                                    <td className={`${theme}-Table-td`}>
+                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                    </td>
+                                                )
+                                            }
+                                        )}
+                                    </tr>
+                                )
+                            }
+                        )}
                         </tbody>
                     </table>
 
