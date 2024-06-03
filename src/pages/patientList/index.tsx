@@ -11,7 +11,7 @@ const PatientList = () => {
         <div className="bg-black-background w-full h-screen px-8" >
             <div className={"py-5 space-y-5"}>
                 <h1 className={"text-base text-primary-text font-medium"}>General Report</h1>
-                <div className={"flex  items-center justify-between "}>
+                <div className={"flex  items-center md:gap-0 gap-5 justify-between md:flex-row flex-col"}>
                     <NumberBox theme={theme}/>
                     <NumberBox theme={theme}/>
                     <NumberBox theme={theme}/>
