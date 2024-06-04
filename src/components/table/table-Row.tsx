@@ -28,7 +28,6 @@ interface TableRowProps {
 }
 
 export const TableRow: FC<TableRowProps> = ({
-                                                externalLink,
                                                 patient,
                                                 memberId,
                                                 age,
@@ -93,7 +92,7 @@ export const TableRow: FC<TableRowProps> = ({
                     {last}
                 </td>
                 <td className={`${theme}-Table-td`}>
-                    <Badge color={stateColor}>
+                    <Badge theme={theme} color={stateColor}>
                         {state}
                     </Badge>
                 </td>
@@ -115,7 +114,7 @@ export const TableRow: FC<TableRowProps> = ({
                 </td>
                 <td className={`${theme}-Table-td`}>
 
-                        <Badge color={lastColor}>
+                        <Badge theme={theme} color={lastColor}>
                             {respiration}
                         </Badge>
 

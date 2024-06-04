@@ -1,12 +1,11 @@
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-interface BackTabProps {
+interface TabProps {
   text: string;
-  
   active: string;
   setActive: React.Dispatch<React.SetStateAction<string>>;
   isFirst?: boolean;
   isLast?: boolean;
+  theme:string
 }
 export const Tab = ({
   text,
@@ -14,8 +13,8 @@ export const Tab = ({
   setActive,
   isFirst,
   isLast,
-}: BackTabProps) => {
-  const theme = useSelector((state: any) => state.theme.value.name);
+  theme
+}: TabProps) => {
   return (
     <Link to={`${text}-infoGraphic`}>
     <div
