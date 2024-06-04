@@ -9,12 +9,12 @@ export const InfoGraphicMain = () => {
   //  const [active, setAirst] = useState(second)
   return (
     <div className=" flex flex-col gap-4 ">
-      <div className=" w-full flex flex-col justify-center items-center bg-black-primary pb-3 rounded-xl border border-main-border">
+      <div className={`${theme}-graphicinfo-center-section `}>
         <div className="relative flex justify-center w-full pb-3">
-          <img src={Img} alt="" />
+          <img src={Img} className="max-h-[604px]"/>
           {patientMainInfo.map((item) => (
-            <div
-              className={` border-2 border-main-border rounded-full absolute ${theme}-graphicinfo-patientinfo-${item.name}-position`}
+            <div 
+              className={` ${theme}-graphicinfo-patientinfo ${theme}-graphicinfo-patientinfo-${item.name}-position`}
             >
               <PatientInfo
                 name={item.name}

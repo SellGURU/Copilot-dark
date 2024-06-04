@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 interface BackTabProps {
   text: string;
   
@@ -16,6 +17,7 @@ export const Tab = ({
 }: BackTabProps) => {
   const theme = useSelector((state: any) => state.theme.value.name);
   return (
+    <Link to={`${text}-infoGraphic`}>
     <div
       data-active={active === text}
       data-isLast={isLast}
@@ -26,5 +28,6 @@ export const Tab = ({
       <img className={`${theme}-icons-${text}`} alt="" />
       <h5 className= {`${theme}-tab-text`}>{text}</h5>
     </div>
+    </Link>
   );
 };

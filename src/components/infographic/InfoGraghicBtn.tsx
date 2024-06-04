@@ -78,7 +78,7 @@ export const InfoGraghicBtn = ({
                   <img className='object-contain' src={item.isDone ? check : calender} alt="" />
                   <div className="h-[50px] w-[1px] bg-main-border absolute -bottom-1 left-[14px]" />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-2">
                     <h2 className={`${theme}-graphicinfo-btn-text`}>{item.date}</h2>
                     <p className="text-[10px] font-normal text-third-text">{item.time}</p>
