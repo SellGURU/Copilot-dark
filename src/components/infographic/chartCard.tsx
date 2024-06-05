@@ -24,7 +24,7 @@ export const ChartCard : React.FC<chartCardProps> = ({type , value ,isMeasured ,
   const theme = useSelector((state: any) => state.theme.value.name)
 
   return (
-    <div className={`${theme}-graphicinfo-charCard-container`}>
+    <div className={`${theme}-graphicinfo-chartCard-container`}>
       <div className="flex justify-between items-center">
         <div className="flex items-start gap-2">
           <img width={32} src={icon} alt="" /> 

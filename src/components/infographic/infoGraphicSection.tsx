@@ -3,7 +3,7 @@ import { btnInfo, chartsInfo } from ".";
 import { useState } from "react";
 import { InfoGraghicBtn } from "./InfoGraghicBtn";
 import { ChartCard } from "./chartCard";
-import { InfoGraphicMain } from "./infoGraphicMainSection";
+import { InfoGraphicCenter} from "./infoGraphicCenterSection";
 export const InfoGraphicSection = () => {
     const [active, setActive] = useState(btnInfo[1].text)
   return (
@@ -13,7 +13,7 @@ export const InfoGraphicSection = () => {
         <InfoGraghicBtn key={item.text} text={item.text} number={item.number}  active = {active} setActive={setActive}  />
        ))}
       </div>
-        <InfoGraphicMain />  
+        <InfoGraphicCenter />  
        <div className="flex flex-col gap-3">
       {chartsInfo.map((item, i )=>(
         <ChartCard key={i} type={item.type} value={item.value} isMeasured={item.isMeasured} othersTypes={item.otherTypes} status={item.status} icon={item.icon} />

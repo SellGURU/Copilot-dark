@@ -17,7 +17,7 @@
   @apply w-full bg-black-background flex border border-t rounded-xl border-main-border flex-col gap-3 p-3;
 }
 .Aurora-graphicinfo-patientinfo {
-  @apply border-2 border-dashed border-main-border rounded-full absolute;
+  @apply border-2  border-main-border rounded-full absolute;
 }
 .Aurora-graphicinfo-patientinfo-Nutritions-position {
   @apply top-24 left-10;
@@ -32,14 +32,14 @@
   @apply bottom-44 right-12;
 }
 .Aurora-graphicinfo-input-container {
-  @apply w-full min-w-[518px] px-5 py-3 rounded-2xl flex items-center  justify-between gap-3 bg-black-primary border border-main-border;
+  @apply w-full min-w-[518px] px-5 py-2 rounded-2xl flex items-center  justify-between gap-3 bg-black-primary border border-main-border;
 }
 .Aurora-graphicinfo-input {
   @apply w-full bg-black-secondary rounded-xl outline-none text-third-text p-3;
 }
-.Aurora-graphicinfo-charCard-container {
+.Aurora-graphicinfo-chartCard-container {
   @apply bg-black-primary border rounded-xl border-main-border w-full pl-4 pr-2  py-1;
 }
 .Aurora-graphicinfo-center-section {
-  @apply  w-full flex flex-col justify-center items-center bg-black-primary pb-3 rounded-xl border border-main-border;
+  @apply w-full  max-w-[518px] flex flex-col justify-center items-center bg-black-primary px-4 pb-1 rounded-xl border border-main-border;
 }

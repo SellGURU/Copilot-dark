@@ -8,7 +8,7 @@ export const InfoGraphicInput = () => {
   const theme = useSelector((state: any) => state.theme.value.name)
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-1">
       <div className="flex gap-1">
         <img src={logo} width={24} alt="" />
         <h2 className="text-primary-text text-14 font-medium">AI-Copilot</h2>
