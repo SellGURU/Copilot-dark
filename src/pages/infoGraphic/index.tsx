@@ -1,3 +1,4 @@
+import { ProfileInfo } from "@/components/Biomarker/profileInfo";
 import { InfoGraphicSection } from "@/components/infographic/infoGraphicSection";
 import TabsWrapper from "@/components/tabs";
 import { useSelector } from "react-redux";
@@ -14,7 +15,7 @@ const InfoGraphic = () => {
         </Link>
         <TabsWrapper />
       </div>
-      <InfoGraphicSection />
+      <ProfileInfo />
     </div>
   );
 };
