@@ -1,20 +1,33 @@
 import Img from "../../assets/images/Group.svg";
 import { InfoGraphicInput } from "./InfoGraphicInput.tsx";
-import { patientMainInfo } from "./index.ts";
+import { patientMainInfo } from "./Data.ts";
 import { PatientInfo } from "./patientInfo.tsx";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState ,} from "react";
 import ArrowRight from "../../../public/Themes/Aurora/icons/arrowRight.svg";
 import { MixedLinesChart } from "../charts/mixedLinesChart.tsx";
 export const InfoGraphicCenter = () => {
   const theme = useSelector((state: any) => state.theme.value.name);
   const [isNext, setIsNext] = useState(false);
+  const [messages, setMessages] = useState([
+    // Sample messages
+    { type: 'text', content: 'Weight Management: Maintaining a healthy weight is crucial for controlling blood pressure.' },
+    { type: 'text', content: 'Alcohol and Tobacco: Limiting alcohol intake and avoiding tobacco use can significantly reduce blood pressure.' },
+    // Add more messages as needed
+  ]);
+
+  
+  const handleSendMessage = (message: string) => {
+    if (message.trim()) {
+      setMessages([...messages, { type: 'text', content: message }]);
+    }
+  };
   return (
-    <div className=" flex flex-col gap-2 ">
+    <div className=" flex flex-col gap-4 ">
       <div className={`${theme}-graphicinfo-center-section `}>
         {!isNext ? (
           <div className="relative flex justify-center w-full pb-3">
-            <img src={Img} className="max-h-[604px]" />
+            <img src={Img} className="max-h-[565px]" />
             {patientMainInfo.map((item) => (
               <div
                 className={` ${theme}-graphicinfo-patientinfo ${theme}-graphicinfo-patientinfo-${item.name}-position`}
@@ -29,8 +42,13 @@ export const InfoGraphicCenter = () => {
             ))}
           </div>
         ) : (
-          <>
-            <div className="border border-main-border rounded-xl rounded-t-none bg-black-secondary text-secondary-text py-1 px-5">
+          <div id="copilot-chat" className="overflow-y-scroll max-h-[562px] py-2">
+            {messages.map((message , index)=>(
+              <div key={index} className="bg-black-secondary text-secondary-text p-2 mb-2 rounded-xl">
+                {message.content}
+              </div>
+            ))}
+            <div className="border border-main-border rounded-xl rounded-t-none bg-black-secondary text-secondary-text py-1 px-5  ">
               <ul className="list-disc leading-6">
                 <p>
                   Weight Management: Maintaining a healthy weight is crucial for
@@ -41,16 +59,18 @@ export const InfoGraphicCenter = () => {
                   Alcohol and Tobacco: Limiting alcohol intake and avoiding
                   tobacco use can significantly reduce blood pressure.
                 </li>
-                <p className="block">Medication:</p>
+                
                 <li className="text-[12px] font-normal ml-5">
+                <p className="block">Medication:</p>
                   When lifestyle changes are not enough, medications such as
                   diuretics, ACE inhibitors, calcium channel blockers, and
                   beta-blockers can be prescribed to help control blood
                   pressure.
                 </li>
-                <p className="block">Regular Monitoring:</p>
+              
                 <li className="text-[12px] font-normal ml-5">
-                  Regular check-ups with a healthcare provider are important for
+                <p className="block">Regular Monitoring : </p>
+                   Regular check-ups with a healthcare provider are important for
                   monitoring blood pressure and making necessary adjustments to
                   treatment plans.
                 </li>
@@ -66,7 +86,7 @@ export const InfoGraphicCenter = () => {
             <div className="  rounded-xl bg-black-secondary border border-main-border px-3 py-2 w-full">
               <MixedLinesChart />
             </div>
-          </>
+          </div>
         )}
         <div className="flex items-center mt-2 gap-3">
           <img
@@ -83,7 +103,7 @@ export const InfoGraphicCenter = () => {
           />
         </div>
       </div>
-      <InfoGraphicInput />
+      <InfoGraphicInput handleSendMessage={handleSendMessage} />
     </div>
   );
 };

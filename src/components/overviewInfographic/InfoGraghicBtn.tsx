@@ -5,7 +5,7 @@ import arrowUp from "../../../public/Themes/Aurora/icons/chevron-up.svg";
 import arrowDown from "../../../public/Themes/Aurora/icons/chevron-down.svg";
 import check from '/Themes/Aurora/icons/check.svg'
 import calender from '/Themes/Aurora/icons/calender.svg'
-import { appointments } from ".";
+import { appointments } from "./Data";
 
 interface InfoGraphicBtnProps {
   text: string;
@@ -75,16 +75,16 @@ export const InfoGraghicBtn = ({
             {appointments.map((item, index) => (
               <div key={index} className="flex gap-2">
                 <div className="relative">
-                  <img className='object-contain' src={item.isDone ? check : calender} alt="" />
-                  <div className="h-[50px] w-[1px] bg-main-border absolute -bottom-1 left-[14px]" />
+                  <img width={32} className='object-contain' src={item.isDone ? check : calender} alt="" />
+                  <div className="h-[40px] w-[1px]  bg-main-border absolute top-8  left-[14px]" />
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-2">
                     <h2 className={`${theme}-graphicinfo-btn-text`}>{item.date}</h2>
                     <p className="text-[10px] font-normal text-third-text">{item.time}</p>
                   </div>
-                  <h2 className="text-third-text">{item.doctor}</h2>
-                  <a className="underline text-primary-color cursor-pointer">{item.details}</a>
+                  <h2 className="text-secondary-text text-xs">{item.doctor}</h2>
+                  <a className="underline text-primary-color cursor-pointer text-xs">{item.details}</a>
                 </div>
               </div>
             ))}

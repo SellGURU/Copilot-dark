@@ -1,7 +1,7 @@
 export  const fakeData = [
     {
         id: 1,
-        externalLink: "https://example.com/link1",
+        externalLink: "/patientList/info-graphic",
         patient: "John Doe",
         memberId: "M123456",
         age: "30",

@@ -1,10 +1,11 @@
 
-import { btnInfo, chartsInfo } from ".";
+import React from "react";
+import { btnInfo, chartsInfo } from "./Data";
 import { useState } from "react";
 import { InfoGraghicBtn } from "./InfoGraghicBtn";
 import { ChartCard } from "./chartCard";
-import { InfoGraphicCenter} from "./infoGraphicCenterSection";
-export const InfoGraphicSection = () => {
+import { InfoGraphicCenter} from "./infoGraphicCenter";
+export const OverviewInfoGraphic: React.FC = () => {
     const [active, setActive] = useState(btnInfo[1].text)
   return (
     <div className="flex justify-center w-full mx-auto max-w[1440px] bg-black-background  gap-5 ">

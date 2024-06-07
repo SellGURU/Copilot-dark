@@ -1,10 +1,12 @@
+import TabsWrapper from "@/components/tabs";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-
-import { InfoGraphicSection } from "@/components/infographic/infoGraphicSection"
-import TabsWrapper from "@/components/Tabs";
+import { Link, Outlet , useNavigate  } from "react-router-dom";
 const InfoGraphic = () => {
   const theme = useSelector((state: any) => state.theme.value.name);
+  const navigate = useNavigate();
+  const handleTabClick = (path: string) => {
+    navigate(path);
+  };
   return (
     <div className="bg-black-background h-[100vh] max-w-[1440px] flex flex-col justify-start items-center">
       <div className="flex gap-3 my-6 ">
@@ -13,9 +15,9 @@ const InfoGraphic = () => {
           <img className={`${theme}-icons-arrow-left`} />
         </div>
         </Link>
-        <TabsWrapper />
+        <TabsWrapper handleTabClick={handleTabClick}/>
       </div>
-      <InfoGraphicSection />
+     <Outlet />
     </div>
   );
 };

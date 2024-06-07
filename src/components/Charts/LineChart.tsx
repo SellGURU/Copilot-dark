@@ -135,9 +135,9 @@ export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
   }, [model]);
 
   return (
-    <div className="rounded-xl w-[300px] p-1   border border-main-border bg-black-secondary relative">
+    <div className="rounded-xl w-[300px]  h-[155px] px-3   border border-main-border bg-black-secondary relative">
       <div className="flex  w-full justify-between ">
-        <h2 className="text-primary-text font-semibold ">{title}</h2>
+        <h2 className="text-secondary-text font-semibold text-xs ">{title}</h2>
         <div className="flex items-center gap-1">
           <h2 className="text-brand-primary-color font-medium text-[10px]">
             24 May, 2024

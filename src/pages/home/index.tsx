@@ -1,4 +1,3 @@
-import { InfoGraphic } from "@/components/infographic/InfoGraphic"
 
 
 const Home = () => {

@@ -136,7 +136,7 @@ export const MixedLinesChart = () => {
   // };
   // ChartJS.register(backgroundColorPlugin);
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className=" absolute  flex w-full justify-between items-center">
         <h2 className="text-secondary-text font-semibold  ml-2">mm Hg</h2>
         <div className="flex items-center gap-1">

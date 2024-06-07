@@ -3,10 +3,21 @@ import logo from "../../../public/Themes/Aurora/icons/input-logo.svg";
 import camera from "../../../public/Themes/Aurora/icons/camera.svg";
 import microphone from "../../../public/Themes/Aurora/icons/input-microphone.svg";
 import {useSelector} from "react-redux";
-
-export const InfoGraphicInput = () => {
+import { useState } from "react";
+interface InfoGraphicInputProps{
+  handleSendMessage: (message:string) => void
+}
+export const InfoGraphicInput : React.FC<InfoGraphicInputProps> = ({handleSendMessage}) => {
   const theme = useSelector((state: any) => state.theme.value.name)
+  const [message, setMessage] = useState("");
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSendMessage(message);
+      setMessage("");
+    }
+  };
   return (
     <div className="flex flex-col gap-1">
       <div className="flex gap-1">
@@ -19,10 +30,13 @@ export const InfoGraphicInput = () => {
           className={`${theme}-graphicinfo-input`}
           type="text"
           placeholder="Enter a prompt here..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <div className="flex gap-2 items-center">
-          <img src={camera} alt="" />
-          <img src={microphone} alt="" />
+          <img className="cursor-pointer" src={camera} alt="" />
+          <img className="cursor-pointer" src={microphone} alt="" />
         </div>
       </div>
     </div>

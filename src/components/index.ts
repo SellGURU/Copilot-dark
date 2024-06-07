@@ -1,11 +1,12 @@
-import SideMenu from "@/components/SideMenu";
+import SideMenu from './sideMenu';
 import TopBar from './topBar'
 import Pagination from "@/components/pagination";
 import SearchBox from "./searchBox";
 import {Table} from "@/components/table/index.tsx"
 import {Badge} from "@/components/badge"
 import Card from "./card"
+import { OverviewInfoGraphic } from './overviewInfographic';
 
 export {
-    SideMenu, TopBar, Pagination,SearchBox, Table, Badge,Card
+    SideMenu, TopBar, Pagination,SearchBox, Table, Badge,Card, OverviewInfoGraphic
 }
