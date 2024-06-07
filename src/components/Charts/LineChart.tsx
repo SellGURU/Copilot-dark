@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useMemo } from "react";
 import { Line } from "react-chartjs-2";
 import annotationPlugin from "chartjs-plugin-annotation";
+import ArrowDown from '../../../public/Themes/Aurora/icons/chevron-down-green.svg'
 import {
   Chart as ChartJS,
   LineElement,
@@ -24,9 +25,9 @@ ChartJS.register(
 );
 interface LineChartProps {
   model: string;
-  title : string
+  title: string;
 }
-export const LineChart: React.FC<LineChartProps> = ({ model , title }) => {
+export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
   const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
   const xData = useMemo(
@@ -42,13 +43,18 @@ export const LineChart: React.FC<LineChartProps> = ({ model , title }) => {
           data: data,
           borderColor: "#00FFFF",
           borderWidth: 2,
-          pointBackgroundColor:  model==='linear' ?   "#00FFFF":  "#1e1e1e",
+          pointBackgroundColor: model === "linear" ? "#00FFFF" : "#1e1e1e",
           pointBorderColor: "#00FFFF",
-          pointRadius:   model === 'area' ? 0 : model === 'linear' ? data.map((_, i) => (xData[i] === "04am" ? 5 : 0)) : 3,
+          pointRadius:
+            model === "area"
+              ? 0
+              : model === "linear"
+              ? data.map((_, i) => (xData[i] === "04am" ? 5 : 0))
+              : 3,
           pointHitRadius: 10,
           pointHoverRadius: 5,
-          tension: model === 'line' ? 0.1 : 0.3 ,
-          fill: model === 'line' ? false : true,
+          tension: model === "line" ? 0.1 : 0.3,
+          fill: model === "line" ? false : true,
         },
       ],
     }),
@@ -56,12 +62,17 @@ export const LineChart: React.FC<LineChartProps> = ({ model , title }) => {
   );
 
   useEffect(() => {
-    if (model === 'linear' ||model ==='area') {
+    if (model === "linear" || model === "area") {
       const chart = chartRef.current;
       if (chart) {
         const ctx = chart.ctx;
         if (ctx) {
-          const gradient = ctx.createLinearGradient(0, 0, 0, chart.chartArea.bottom);
+          const gradient = ctx.createLinearGradient(
+            0,
+            0,
+            0,
+            chart.chartArea.bottom
+          );
           gradient.addColorStop(0, "rgba(0, 255, 255, 0.8)");
           gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
           chart.data.datasets[0].backgroundColor = gradient;
@@ -71,14 +82,14 @@ export const LineChart: React.FC<LineChartProps> = ({ model , title }) => {
     }
   }, [chartData, model]);
 
-  const lineChartOptions: ChartOptions<'line'> = useMemo(() => {
-    const plugins : ChartOptions<'line'>['plugins'] = {
-        legend : {
-            display : false,
-        }
-    }
+  const lineChartOptions: ChartOptions<"line"> = useMemo(() => {
+    const plugins: ChartOptions<"line">["plugins"] = {
+      legend: {
+        display: false,
+      },
+    };
 
-    if (model === 'linear') {
+    if (model === "linear") {
       plugins.annotation = {
         annotations: {
           line1: {
@@ -124,13 +135,17 @@ export const LineChart: React.FC<LineChartProps> = ({ model , title }) => {
   }, [model]);
 
   return (
-    <div className="p-3 rounded-xl border border-main-border bg-black-secondary relative">
+    <div className="rounded-xl w-[300px] p-1   border border-main-border bg-black-secondary relative">
       <div className="flex  w-full justify-between ">
-      <h2 className="text-primary-text font-semibold ">{title}</h2>   
-        <h2 className="text-brand-primary-color font-semibold">24 May, 2024</h2> 
+        <h2 className="text-primary-text font-semibold ">{title}</h2>
+        <div className="flex items-center gap-1">
+          <h2 className="text-brand-primary-color font-medium text-[10px]">
+            24 May, 2024
+          </h2>
+          <img  className="object-contain" src={ArrowDown} alt="" />
+        </div>
       </div>
       <Line ref={chartRef} data={chartData} options={lineChartOptions} />
-     
     </div>
   );
 };

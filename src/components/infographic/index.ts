@@ -85,9 +85,10 @@ export const appointments = [
         icon : HeartIcon
     },
     {type : "CBC",
-        isMeasured : false,
+        isMeasured : true,
         value: 40 ,
         status: 'Active',
+        otherTypes : ['Hb' , 'HCT' , 'WBC' ,'MCHC' , 'MCH' , 'RBC', 'PLT' ],
         icon : CbcIcon
     },
 

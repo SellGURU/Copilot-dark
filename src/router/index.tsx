@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         
       },
       {
-        path: "/patientList/infoGraphic",
+        path: "/patientList/Overview-infoGraphic",
         element: <InfoGraphic />,
       },
       
