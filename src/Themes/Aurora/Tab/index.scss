@@ -5,7 +5,7 @@
   @apply flex  items-center bg-black-secondary justify-center gap-1 cursor-pointer px-[49px] py-3 border-r border-main-border;
 }
 .Aurora-tab-icon-container{
-  @apply flex items-center justify-center px-4 py-3 bg-black-secondary rounded-xl;
+  @apply flex items-center justify-center px-4 py-3 bg-black-secondary rounded-xl w-full max-w-[1246px];
 }
 .Aurora-tab[data-active="true"] {
   @apply bg-brand-primary-color;

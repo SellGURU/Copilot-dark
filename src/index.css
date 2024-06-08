@@ -16,6 +16,18 @@
   font-family: Roboto;
   src: url("../src/assets/fonts/Roboto-Regular.ttf") format("truetype");
 }
+<<<<<<< HEAD
 #copilot-chat::-webkit-scrollbar {
   display: none;
 }
+=======
+@layer utilities {
+  .green-gradient {
+    background-image: radial-gradient(circle, #84d3a2, #00bcb5, #009ed7, #0078e7, #3e3dc7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+}
+>>>>>>> Biomarker

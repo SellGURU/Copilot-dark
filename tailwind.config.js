@@ -5,6 +5,9 @@ export default {
 
   theme: {
     extend: {
+      backgroundImage :{
+        'green-gradient' : 'radial-gradient(circle, #84d3a2, #00bcb5, #009ed7, #0078e7, #3e3dc7)',
+      },
       colors: {
         "primary-color": "#0CBC84",        
         "secondary-color": "#253343",
@@ -15,7 +18,6 @@ export default {
         'black-secondary': '#272727',
         'black-third': '#272F2F',
         'black-fourth': '#333333',
-
         // Border
         'main-border': '#353535',
 
