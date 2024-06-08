@@ -37,7 +37,7 @@ export const Tab = ({
     
       <img className={`${theme}-icons-${text} ${!icon && 'hidden'}`} alt="" />
       <h5 className= {`${theme}-tab-text`}>{text}</h5>
-      <div className={`${!number && 'hidden' } ${active===text ? 'bg-transparent' : 'bg-black-secondary'} rounded-xl px-3 py-2 text-primary-text text-xs`}>{number}</div>
+      <div className={`${!number && 'hidden' } ${active===text ? 'bg-transparent' : 'bg-main-border'} rounded-xl px-3 py-2 text-primary-text text-xs`}>{number}</div>
     </div>
     
   );

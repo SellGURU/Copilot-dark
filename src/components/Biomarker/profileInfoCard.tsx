@@ -5,11 +5,24 @@ import DualProgressCircle from "./dualProgressCircle";
 import ProgressCircle from "./progressCircle";
 export const ProfileInfoCard = () => {
   return (
-    <div className="bg-black-secondary w-full max-w-[1224px] mx-auto lg:px-6 md:px-4 py-3  border border-main-border rounded-xl  flex ">
+    <div className="bg-black-primary w-full max-w-[1224px] mx-auto lg:px-6 md:px-4 py-3  border border-main-border rounded-xl  flex ">
       <div className=" flex gap-4 items-center ">
-        <div style={{ backgroundImage :  `url(${border})`}} className="relative w-32 bg-cover bg-center h-32 ">
-          
-          <img className="absolute top-[6px] left-[6px]  h-[115px] w-[115px] object-cover" src={profille} alt="" />
+        <div
+          style={{
+            backgroundImage:
+            'radial-gradient(circle, rgba(3,218,197,1) 0%, rgba(31,74,75,1) 53%)',
+           
+          }}
+          className="relative w-32 rounded-full bg-cover bg-center h-32 "
+        >
+          <div  style={{ backgroundImage: `url(${border})` }} className="relative w-32 h-32 bg-cover bg-center">
+            
+            <img
+              className="absolute top-[6px] left-[6px]  h-[115px] w-[115px] object-cover"
+              src={profille}
+              alt=""
+            />
+          </div>
         </div>
         <div className="flex flex-col  gap-2 text-nowrap">
           <h2 className="text-secondary-text text-[14px] font-medium">
@@ -35,7 +48,7 @@ export const ProfileInfoCard = () => {
       <div className=" ml-4 flex gap-1 relative  ">
         {BiologicalCardInfo.map((item) => (
           <ProgressCircle
-          size={45}
+            size={45}
             progress={85}
             title={item.title}
             MAE={item.MAE}
@@ -64,7 +77,7 @@ export const ProfileInfoCard = () => {
       <div className="flex  relative  ">
         {MolecularCardInfo.map((item) => (
           <ProgressCircle
-          size={45}
+            size={45}
             progress={45}
             title={item.title}
             MAE={item.MAE}

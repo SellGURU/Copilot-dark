@@ -43,11 +43,7 @@ export const InfoGraphicCenter = () => {
           </div>
         ) : (
           <div id="copilot-chat" className="overflow-y-scroll max-h-[562px] py-2">
-            {messages.map((message , index)=>(
-              <div key={index} className="bg-black-secondary text-secondary-text p-2 mb-2 rounded-xl">
-                {message.content}
-              </div>
-            ))}
+           
             <div className="border border-main-border rounded-xl rounded-t-none bg-black-secondary text-secondary-text py-1 px-5  ">
               <ul className="list-disc leading-6">
                 <p>
@@ -86,6 +82,11 @@ export const InfoGraphicCenter = () => {
             <div className="  rounded-xl bg-black-secondary border border-main-border px-3 py-2 w-full">
               <MixedLinesChart />
             </div>
+            {messages.map((message , index)=>(
+              <div key={index} className="bg-black-secondary text-secondary-text p-2 mb-2 rounded-xl">
+                {message.content}
+              </div>
+            ))}
           </div>
         )}
         <div className="flex items-center mt-2 gap-3">
