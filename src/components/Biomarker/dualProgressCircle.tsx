@@ -64,7 +64,7 @@ const DualProgressCircle: React.FC<DualProgressCircleProps> = ({ progress1, prog
             <span className="text-secondary-text text-right text-[10px]">
               Biological <br /> Age
             </span>
-            <div className="h-[1px] w-[26px] bg-secondary-text" />
+            <div className="h-[1px] w-7 bg-secondary-text" />
             <span className="text-primary-text text-[16px] font-medium">
               {progress1}
             </span>
@@ -73,8 +73,8 @@ const DualProgressCircle: React.FC<DualProgressCircleProps> = ({ progress1, prog
             <span className="text-secondary-text text-right text-[10px] font-medium">
               Chrono <br /> Age
             </span>
-            <div className="h-[1px] w-[26px] bg-secondary-text" />
-            <span className="text-[16px] text-primary-text">{progress2}</span>
+            <div className="h-[1px] w-7 bg-secondary-text" />
+            <span className="text-base text-primary-text">{progress2}</span>
           </div>
         </div>
       </div>

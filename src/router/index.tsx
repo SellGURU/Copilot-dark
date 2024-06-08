@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Develop, Home, PatientList , InfoGraphic } from "../pages";
+import { Develop, Home, PatientList , InfoGraphic, Biomarker } from "../pages";
 import Layout from "@/Themes/index";
 import { OverviewInfoGraphic } from "@/components";
 const router = createBrowserRouter([
@@ -30,6 +30,7 @@ const router = createBrowserRouter([
           },
           {
             path : 'biomarker',
+            element : <Biomarker />
           },
           {
             path : 'diagnosis',

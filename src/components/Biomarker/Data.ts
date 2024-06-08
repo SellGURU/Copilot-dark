@@ -6,6 +6,7 @@ import Micro from '../../../public/Themes/Aurora/icons/Microbiome.svg';
 import Blood from '../../../public/Themes/Aurora/icons/Blood-age.svg';
 import ArtBoard from '../../../public/Themes/Aurora/icons/Artboard.svg';
 import Dna from '../../../public/Themes/Aurora/icons/Dna.svg';
+
 export const BiologicalCardInfo = [
     {
         icon:Camera,
@@ -57,4 +58,35 @@ export const BiologicalCardInfo = [
         MAE: '2-4 years',
         otherStyles : 'top-12'
     },
+ ]
+ export const TabsInfo = [
+    {
+        text: 'All',
+        path : '',
+    },
+    {
+        text: 'Genomics',
+        path : '',
+        number: 4,
+    },
+    {
+        text: 'Epigenomics',
+        path : '',
+        number: 0
+    },
+    {
+        text : 'Proteomics',
+        path : '',
+        number : 1
+    },
+    {
+        text: 'Metabolomics',
+        path : '',
+        number: 2,
+    },
+    {
+        text: 'Microbiomics' ,
+        path : '',
+        number: 1
+    }
  ]

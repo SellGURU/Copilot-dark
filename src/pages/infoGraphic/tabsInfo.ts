@@ -3,25 +3,31 @@ export const TabsInfo = [
   {
     text: "Overview",
     path : '',
+    icon : true
   },
   {
     text: "Biomarker",
-    path : 'biomarker'
+    path : 'biomarker',
+    icon : true
   },
   {
     text: "Diagnosis",
-    path : 'diagnosis'
+    path : 'diagnosis',
+    icon : true
   },
   {
     text: "Intervention",
-    path : 'intervention'
+    path : 'intervention',
+    icon : true
   },
   {
     text: "Timeline",
-    path : 'timeline'
+    path : 'timeline',
+    icon : true
   },
   {
     text: "Messages",
-    path : 'messages'
+    path : 'messages',
+    icon : true
   },
 ];
