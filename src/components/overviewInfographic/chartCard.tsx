@@ -1,7 +1,9 @@
 import { useState } from "react";
 import bellIcon from "../../../public/Themes/Aurora/icons/bell-icon.svg";
+import arrowDown from '../../../public/Themes/Aurora/icons/chevron-down-green.svg'
 import { useSelector } from "react-redux";
 import { LineChart } from "../charts/LineChart";
+
 interface chartCardProps {
   type: string;
   value: number;
@@ -75,7 +77,17 @@ export const ChartCard: React.FC<chartCardProps> = ({
         </span>
         {type === "Temperature" ? "oF" : type === "Heart Rate" ? "bpm" : "%"}
       </h2>
-      <LineChart model={type === "CBC" ? "linear" : "line"} title={title} />
+      <div className="bg-black-secondary border border-main-border px-2 pb-6 rounded-lg h-[155px]">
+        <div className="flex w-full justify-between items-center">
+          <span className="text-secondary-text">oF</span>
+          <div className="flex items-center gap-2">
+            <h2 className="text-brand-primary-color text-xs">24 May,  2024</h2>
+            <img src={arrowDown} alt="" />
+          </div>
+        </div>
+        
+        <LineChart model={type === "CBC" ? "linear" : "line"} title={title} />
+      </div>
     </div>
   );
 };

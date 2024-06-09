@@ -17,7 +17,9 @@ export const OverviewInfoGraphic: React.FC = () => {
         <InfoGraphicCenter />  
        <div className="flex flex-col gap-3">
       {chartsInfo.map((item, i )=>(
+        <div >
         <ChartCard key={i} type={item.type} value={item.value} isMeasured={item.isMeasured} othersTypes={item.otherTypes} status={item.status} icon={item.icon} />
+        </div>
       ))}
        </div>
     </div>

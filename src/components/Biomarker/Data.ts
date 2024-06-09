@@ -6,6 +6,10 @@ import Micro from '../../../public/Themes/Aurora/icons/Microbiome.svg';
 import Blood from '../../../public/Themes/Aurora/icons/Blood-age.svg';
 import ArtBoard from '../../../public/Themes/Aurora/icons/Artboard.svg';
 import Dna from '../../../public/Themes/Aurora/icons/Dna.svg';
+import tempIcon from "../../../public/Themes/Aurora/icons/temp-icon.svg";
+import HeartIcon from "../../../public/Themes/Aurora/icons/heart-icon.svg";
+import CbcIcon from "../../../public/Themes/Aurora/icons/cbc-icon.svg";
+import BloodPressureIcon from "../../../public/Themes/Aurora/icons/BloodPressure.svg";
 
 export const BiologicalCardInfo = [
     {
@@ -89,4 +93,34 @@ export const BiologicalCardInfo = [
         path : '',
         number: 1
     }
+ ]
+ export const ChartInfo = [
+    {
+        icon: tempIcon,
+        title: 'Temperature',
+        type : 'area',
+        Avarage: 99.5 ,
+        current:  96,
+    },
+    {
+        icon: HeartIcon,
+        title: 'Heart Rate',
+        type : 'line',
+        Avarage: 99.5 ,
+        current:  96,
+    },
+    {
+        icon: CbcIcon,
+        title: 'CBC',
+        type : 'linear',
+        Avarage: 99.5 ,
+        current:  96,
+    },
+    {
+        icon: BloodPressureIcon,
+        title: 'Blood Pressure',
+       
+        Avarage: 99.5 ,
+        current:  96,
+    },
  ]

@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useMemo } from "react";
 import { Line } from "react-chartjs-2";
 import annotationPlugin from "chartjs-plugin-annotation";
-import ArrowDown from '../../../public/Themes/Aurora/icons/chevron-down-green.svg'
 import {
   Chart as ChartJS,
   LineElement,
@@ -25,9 +24,9 @@ ChartJS.register(
 );
 interface LineChartProps {
   model: string;
-  title: string;
+
 }
-export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
+export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
   const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
   const xData = useMemo(
@@ -96,8 +95,8 @@ export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
             type: "line",
             xMin: "04am",
             xMax: "04am",
-            yMin: 3.5,
-            yMax: 6.5,
+            yMin: 0,
+            yMax: 10,
             borderColor: "rgba(0, 255, 255, 0.8)",
             borderWidth: 1,
             label: {
@@ -111,7 +110,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
 
     return {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       scales: {
         x: {
           ticks: {
@@ -122,10 +121,13 @@ export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
           },
         },
         y: {
+          
+        
           ticks: {
             color: "#fff",
           },
           grid: {
+            display : false,
             color: "#444",
           },
         },
@@ -135,17 +137,10 @@ export const LineChart: React.FC<LineChartProps> = ({ model, title }) => {
   }, [model]);
 
   return (
-    <div className="rounded-xl w-[300px]  h-[155px] px-3   border border-main-border bg-black-secondary relative">
-      <div className="flex  w-full justify-between ">
-        <h2 className="text-secondary-text font-semibold text-xs ">{title}</h2>
-        <div className="flex items-center gap-1">
-          <h2 className="text-brand-primary-color font-medium text-[10px]">
-            24 May, 2024
-          </h2>
-          <img  className="object-contain" src={ArrowDown} alt="" />
-        </div>
-      </div>
-      <Line ref={chartRef} data={chartData} options={lineChartOptions} />
-    </div>
-  );
+    
+  <div className="w-full h-full">
+     <Line ref={chartRef} data={chartData} options={lineChartOptions} />
+   </div>
+     
+  )
 };
