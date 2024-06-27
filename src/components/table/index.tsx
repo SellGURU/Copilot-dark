@@ -3,7 +3,7 @@ import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {useSelector} from "react-redux";
 import {Pagination, SearchBox} from "@/components";
-import {columns} from "./tableTd.tsx"
+import {columns} from "./tableTd"
 import {fakeData} from "@/components/table/fakeData.ts";
 import {useState} from "react";
 import {

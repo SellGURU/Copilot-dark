@@ -1,6 +1,6 @@
 import React from "react";
-import { LineChart } from "../charts/LineChart";
-import { MixedLinesChart } from "../charts/mixedLinesChart";
+import { LineChart } from "../Charts/LineChart";
+import { MixedLinesChart } from "../Charts/mixedLinesChart";
 interface CharCardProps {
   icon: string;
   title: string;

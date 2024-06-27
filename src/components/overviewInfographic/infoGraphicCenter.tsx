@@ -5,7 +5,7 @@ import { PatientInfo } from "./patientInfo.tsx";
 import { useSelector } from "react-redux";
 import { useState ,} from "react";
 import ArrowRight from "../../../public/Themes/Aurora/icons/arrowRight.svg";
-import { MixedLinesChart } from "../charts/mixedLinesChart.tsx";
+import { MixedLinesChart } from "../Charts/mixedLinesChart.tsx";
 export const InfoGraphicCenter = () => {
   const theme = useSelector((state: any) => state.theme.value.name);
   const [isNext, setIsNext] = useState(false);

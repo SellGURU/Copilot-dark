@@ -1,6 +1,6 @@
 import { ProfileInfoCard } from "./profileInfoCard";
 import SearchBox from "../searchBox";
-import TabsWrapper from "../tabs";
+import TabsWrapper from "../Tabs";
 import { ChartInfo, TabsInfo } from "./Data";
 import stars from "../../../public/Themes/Aurora/icons/stars.svg";
 import AddIcon from "../../../public/Themes/Aurora/icons/add-square.svg";

@@ -1,4 +1,4 @@
-import TabsWrapper from "@/components/tabs";
+import TabsWrapper from "../../components/Tabs";
 import { useSelector } from "react-redux";
 import { Link, Outlet , useNavigate  } from "react-router-dom";
 import { TabsInfo } from "./tabsInfo";
