@@ -23,7 +23,7 @@ export const ChartCard: React.FC<CharCardProps> = ({
                 <h2 className="text-base text-primary-text font-medium" >{title}</h2>
             </div>
             <div className="w-48 h-24">
-                {title === 'Blood Pressure' ? <MixedLinesChart /> :   <LineChart model={type} /> }
+                {title === 'Blood Pressure' ? <MixedLinesChart /> :   <LineChart model={type} title="" /> }
          
             </div>
         </div>

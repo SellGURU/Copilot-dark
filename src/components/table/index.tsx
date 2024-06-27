@@ -40,8 +40,8 @@ export const Table = () => {
     });
 
     const theme = useSelector((state: any) => state.theme.value.name)
-    const onFilterChange = (id: string, value: string) =>
-        setColumnFilters((prev) =>
+    const onFilterChange = (id: any, value: string) =>
+        setColumnFilters((prev:any) =>
             prev
                 .filter((f: any) => f.id !== id)
                 .concat({

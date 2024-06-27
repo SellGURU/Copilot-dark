@@ -24,7 +24,7 @@ ChartJS.register(
 );
 interface LineChartProps {
   model: string;
-
+  title: string
 }
 export const LineChart: React.FC<LineChartProps> = ({ model }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
