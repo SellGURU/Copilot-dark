@@ -45,6 +45,8 @@ export const Table = () => {
             prev
                 .filter((f: any) => f.id !== id)
                 .concat({
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+     // @ts-ignore
                     id,
                     value,
                 })
