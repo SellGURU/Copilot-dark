@@ -85,7 +85,7 @@ export const OverviewChartCard: React.FC<chartCardProps> = ({
           </div>
         </div>
         
-        <LineChart model={type === "CBC" ? "linear" : "line"}  />
+        <LineChart model={type === "CBC" ? "linear" : "line"} active={false}  />
         
       </div>
     </div>
