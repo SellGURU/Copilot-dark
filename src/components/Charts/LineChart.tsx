@@ -24,8 +24,8 @@ ChartJS.register(
 );
 interface LineChartProps {
   model: string;
-  active? : boolean;
-
+  
+  active : boolean;
 }
 export const LineChart: React.FC<LineChartProps> = ({ model , active }) => {
   const chartRef = useRef<ChartJS<"line">>(null);

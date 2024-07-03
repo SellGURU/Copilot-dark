@@ -1,8 +1,7 @@
 import {Dispatch , SetStateAction } from "react";
-import { LineChart } from "../charts/LineChart";
+import { LineChart } from "../charts/lineChart";
 import { MixedLinesChart } from "../charts/mixedLinesChart";
 import { useSelector } from "react-redux";
-
 interface CharCardProps {
 
   title: string;

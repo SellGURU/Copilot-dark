@@ -3,7 +3,7 @@ import {TbFilterPlus} from "react-icons/tb";
 import {RiUserAddLine} from "react-icons/ri";
 import {useSelector} from "react-redux";
 import {Pagination, SearchBox} from "@/components";
-import {columns} from "./tableTd.tsx"
+import {columns} from "./tableTd"
 import {fakeData} from "@/components/table/fakeData.ts";
 import {useState} from "react";
 import {
@@ -40,11 +40,13 @@ export const Table = () => {
     });
 
     const theme = useSelector((state: any) => state.theme.value.name)
-    const onFilterChange = (id: string, value: string) =>
-        setColumnFilters((prev) =>
+    const onFilterChange = (id: any, value: string) =>
+        setColumnFilters((prev:any) =>
             prev
                 .filter((f: any) => f.id !== id)
                 .concat({
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+     // @ts-ignore
                     id,
                     value,
                 })

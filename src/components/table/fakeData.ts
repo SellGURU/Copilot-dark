@@ -40,6 +40,7 @@ export  const fakeData = [
         lastColor: "none",
         imageSrc: "https://example.com/image2.jpg",
         last: "2023-05-20"
+
     },
     {
         id: 3,

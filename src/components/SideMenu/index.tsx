@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Outlet, useNavigate } from "react-router-dom"
 import icon from '@/assets/images/icon.png';
-import { menus } from "./menu";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import TopBar from "../topBar";
+import {menus} from "./menu";
 
 const SideMenu = () => {
     const theme = useSelector((state:any) => state.theme.value.name)

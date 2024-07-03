@@ -2,7 +2,7 @@ import { useState } from "react";
 import bellIcon from "../../../public/Themes/Aurora/icons/bell-icon.svg";
 import arrowDown from '../../../public/Themes/Aurora/icons/chevron-down-green.svg'
 import { useSelector } from "react-redux";
-import { LineChart } from "../charts/LineChart";
+import { LineChart } from "../charts/lineChart";
 
 interface chartCardProps {
   type: null | string;
