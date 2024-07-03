@@ -1,5 +1,5 @@
 .Aurora-graphicinfo-btn-container {
-  @apply flex justify-between bg-black-primary w-full  min-w-[312px] px-4 py-3 cursor-pointer select-none;
+  @apply flex justify-between bg-black-primary w-full   min-w-[312px] p-4 cursor-pointer select-none;
 }
 .Aurora-graphicinfo-btn-text {
   @apply text-primary-text font-medium text-sm;
@@ -38,8 +38,8 @@
   @apply w-full bg-black-secondary rounded-xl outline-none text-third-text px-3 py-2;
 }
 .Aurora-graphicinfo-chartCard-container {
-  @apply bg-black-primary border rounded-xl border-main-border w-full pl-4 pr-2  py-2;
+  @apply bg-black-primary border rounded-xl border-main-border  w-full pl-4 pr-2  py-2 pb-3 ;
 }
 .Aurora-graphicinfo-center-section {
-  @apply w-full  max-w-[518px] flex flex-col justify-center items-center bg-black-primary px-4 pb-3 rounded-xl border border-main-border;
+  @apply w-full h-full   max-w-[518px] flex flex-col justify-center items-center bg-black-primary px-4 pb-3 rounded-xl border border-main-border;
 }

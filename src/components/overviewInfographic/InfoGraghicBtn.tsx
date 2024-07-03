@@ -76,7 +76,7 @@ export const InfoGraghicBtn = ({
               <div key={index} className="flex gap-2">
                 <div className="relative">
                   <img width={32} className='object-contain' src={item.isDone ? check : calender} alt="" />
-                  <div className="h-[40px] w-[1px]  bg-main-border absolute top-8  left-[14px]" />
+                  <div className="h-[42px] w-[1px]  bg-main-border absolute top-9  left-[14px]" />
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-2">

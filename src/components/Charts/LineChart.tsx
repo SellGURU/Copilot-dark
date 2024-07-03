@@ -24,9 +24,10 @@ ChartJS.register(
 );
 interface LineChartProps {
   model: string;
+  active? : boolean;
 
 }
-export const LineChart: React.FC<LineChartProps> = ({ model }) => {
+export const LineChart: React.FC<LineChartProps> = ({ model , active }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
   const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
   const xData = useMemo(
@@ -40,10 +41,10 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
         {
           label: "bpm",
           data: data,
-          borderColor: "#00FFFF",
+          borderColor: active ? "#1E1E1" : "#00FFFF",
           borderWidth: 2,
           pointBackgroundColor: model === "linear" ? "#00FFFF" : "#1e1e1e",
-          pointBorderColor: "#00FFFF",
+          pointBorderColor: active ? "#1E1E1" : "#00FFFF",
           pointRadius:
             model === "area"
               ? 0
@@ -57,7 +58,7 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
         },
       ],
     }),
-    [data, xData, model]
+    [data, xData, model , active]
   );
 
   useEffect(() => {
@@ -97,11 +98,12 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
             xMax: "04am",
             yMin: 0,
             yMax: 10,
-            borderColor: "rgba(0, 255, 255, 0.8)",
+            borderColor: active ? "#1E1E1" : "rgba(0, 255, 255, 0.8)",
             borderWidth: 1,
             label: {
               content: "Separation Line",
               position: "center",
+              color :active ? "#1E1E1" : "rgba(0, 255, 255, 0.8)"
             },
           },
         },
@@ -114,7 +116,11 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
       scales: {
         x: {
           ticks: {
-            color: "#fff",
+            color: active ? "#1E1E1" : "#FFF",
+               maxRotation: 0,
+            minRotation: 0,
+            autoSkip: true,
+            maxTicksLimit: 7, // Adjust this
           },
           grid: {
             display: false,
@@ -124,17 +130,21 @@ export const LineChart: React.FC<LineChartProps> = ({ model }) => {
           
         
           ticks: {
-            color: "#fff",
+            color: active ? "#1E1E1" : "#FFFF",
           },
           grid: {
-            display : false,
+            display : true,
             color: "#444",
+          },
+          border: {
+            dash: [3, 3],
+            display: true,
           },
         },
       },
       plugins,
     };
-  }, [model]);
+  }, [model , active]);
 
   return (
     

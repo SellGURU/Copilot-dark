@@ -9,7 +9,7 @@ const InfoGraphic = () => {
     navigate(path);
   };
   return (
-    <div className="bg-black-background h-[100vh] max-w-[1440px] flex flex-col justify-start items-center">
+    <div className="bg-black-background max-w-[1440px] overflow--hidden h-[100vh] flex flex-col justify-start items-center">
       <div className="flex gap-3 my-6 ">
       <Link to={"/patientlist"}>
         <div className={`${theme}-tab-icon-container`}>

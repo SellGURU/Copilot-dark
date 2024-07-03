@@ -125,9 +125,9 @@ export  const fakeData = [
         imageSrc: "https://example.com/image6.jpg",
         last: "2023-05-24"
     }, {
-        id: 1,
+        id: 7,
         externalLink: "https://example.com/link1",
-        patient: "John Doe",
+        patient: "John Doeee",
         memberId: "M123456",
         age: "30",
         sex: "Male",
@@ -146,7 +146,7 @@ export  const fakeData = [
         last: "2023-05-19"
     },
     {
-        id: 2,
+        id: 8,
         externalLink: "https://example.com/link2",
         patient: "Jane Smith",
         memberId: "M654321",
@@ -167,7 +167,7 @@ export  const fakeData = [
         last: "2023-05-20"
     },
     {
-        id: 3,
+        id: 9,
         externalLink: "https://example.com/link3",
         patient: "Alice Johnson",
         memberId: "M789012",

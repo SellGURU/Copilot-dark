@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { Line } from "react-chartjs-2";
 import annotationPlugin from "chartjs-plugin-annotation";
 
@@ -25,8 +25,10 @@ ChartJS.register(
   Title,
   annotationPlugin
 );
-
-export const MixedLinesChart = () => {
+interface MixedLinesChartProps{
+  active : boolean;
+}
+export const MixedLinesChart : React.FC<MixedLinesChartProps> = ({active}) => {
   const chartRef = useRef<ChartJS<"line">>(null);
 
   const data = {
@@ -66,11 +68,11 @@ export const MixedLinesChart = () => {
     plugins: { annotation: { annotations: any } };
   } = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     scales: {
       x: {
         ticks: {
-          color: "#fff",
+          color: active ? "#1E1E1" : "#FFF",
         },
         grid: {
           display: false,
@@ -79,7 +81,7 @@ export const MixedLinesChart = () => {
       },
       y: {
         ticks: {
-          color: "#fff",
+          color: active ? "#1E1E1" : "#FFF",
           callback: function (value) {
             return value;
           },
@@ -125,11 +127,11 @@ export const MixedLinesChart = () => {
       <div className="flex items-center gap-2 justify-end">
         <div className="flex items-center gap-1"> 
           <div className="w-2 h-1 bg-blue-600" />
-          <span className="text-[8px] text-secondary-text">SPB</span>
+          <span className={`text-[8px] ${active ? 'text-black' : 'text-secondary-text'}`}>SPB</span>
         </div>
         <div className="flex items-center gap-1"> 
           <div className="w-2 h-1 bg-red-600" />
-          <span className="text-[8px] text-secondary-text">DPB</span>
+          <span className={`text-[8px] ${active ? 'text-black' : 'text-secondary-text'}`}>DPB</span>
         </div>
       </div>
       <Line ref={chartRef} data={data} options={options} />

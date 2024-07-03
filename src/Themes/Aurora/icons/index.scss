@@ -73,6 +73,9 @@
     mask-position: center;
     @apply w-6 h-6 bg-[#FFFFFF99] ;
 }
+.Aurora-icons-Overview[data-active="true"]{
+    @apply  bg-black ;
+}
 .Aurora-icons-Biomarker{
     mask-image: url(/Themes/Aurora/icons/biomarker.svg);
     mask-size: 100%;
@@ -80,6 +83,9 @@
     mask-repeat: no-repeat;
     mask-position: center;
     @apply w-6 h-6 bg-[#FFFFFF99] ;
+}
+.Aurora-icons-Biomarker[data-active="true"]{
+    @apply  bg-black ;
 }
 .Aurora-icons-Diagnosis{
     mask-image: url(/Themes/Aurora/icons/diagnosis.svg);
@@ -89,6 +95,10 @@
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
 }
+.Aurora-icons-Diagnosis[data-active="true"]{
+    @apply  bg-black ;
+}
+
 .Aurora-icons-Intervention{
     mask-image: url(/Themes/Aurora/icons/trend-up.svg);
     mask-size: 100%;
@@ -96,6 +106,9 @@
     mask-repeat: no-repeat;
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
+}
+.Aurora-icons-Intervention[data-active="true"]{
+    @apply  bg-black ;
 }
 .Aurora-icons-Timeline{
     mask-image: url(/Themes/Aurora/icons/timeline.svg);
@@ -105,6 +118,9 @@
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
 }
+.Aurora-icons-Timeline[data-active="true"]{
+    @apply  bg-black ;
+}
 .Aurora-icons-Messages{
     mask-image: url(/Themes/Aurora/icons/messages.svg);
     mask-size: 100%;
@@ -112,6 +128,9 @@
     mask-repeat: no-repeat;
     mask-position: center;
     @apply w-6 h-6  bg-[#FFFFFF99];
+}
+.Aurora-icons-Messages[data-active="true"]{
+    @apply  bg-black ;
 }
 .Aurora-icons-PiChatBold{
     @apply text-[#03DAC5] w-6 h-6
@@ -151,5 +170,42 @@
     mask-repeat: no-repeat;
     mask-position: center;
     @apply w-6 h-6 bg-brand-secondary-color;
+     ;
+}
+.Aurora-biomarker-charts-BloodPressure{
+    mask-image: url(/public/Themes/Aurora/icons/BloodPressure.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-brand-primary-color;
+     ;
+}
+.Aurora-biomarker-charts-Temperature{
+    mask-image: url(/public/Themes/Aurora/icons/temperature.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-brand-primary-color;
+     ;
+}
+.Aurora-biomarker-charts-HeartRate{
+    mask-image: url(/public/Themes/Aurora/icons/HeartRate.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-brand-primary-color;
+     ;
+}
+      
+.Aurora-biomarker-charts-CBC{
+    mask-image: url(/public/Themes/Aurora/icons/CBC.svg);
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @apply w-6 h-6 bg-brand-primary-color;
      ;
 }

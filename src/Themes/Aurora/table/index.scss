@@ -1,5 +1,5 @@
 .Aurora-Table-container{
-  @apply overflow-x-auto p-2  bg-[#1E1E1E] rounded-xl text-[#FFFFFF] opacity-85
+  @apply overflow-y-scroll max-h-[540px] p-2  bg-[#1E1E1E] rounded-xl text-[#FFFFFF] opacity-85
 }
 .Aurora-Table-header{
   @apply px-3 pt-4 pb-1 text-xs font-medium cursor-pointer

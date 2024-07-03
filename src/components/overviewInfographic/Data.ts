@@ -4,10 +4,6 @@ import ActivityIcon from "/public/Themes/Aurora/icons/Activity-logo.svg";
 import Border from "/public/Themes/Aurora/icons/Activity-border.svg";
 import SleepIcon from "/public/Themes/Aurora/icons/Sleep-icon.svg";
 import MindIcon from "/public/Themes/Aurora/icons/Mind-icon.svg";
-import tempIcon from "../../../public/Themes/Aurora/icons/temp-icon.svg";
-import HeartIcon from "../../../public/Themes/Aurora/icons/heart-icon.svg";
-import CbcIcon from "../../../public/Themes/Aurora/icons/cbc-icon.svg";
-
 export const btnInfo =[
     {
         text : 'Patient Info',
@@ -76,20 +72,19 @@ export const appointments = [
         isMeasured : false,
         value: 99.5,
         status: 'Active',
-        icon : tempIcon
+        
     },
     {type : "Heart Rate",
         isMeasured : true,
         value: 90,
         status: 'Active',
-        icon : HeartIcon
+        
     },
     {type : "CBC",
         isMeasured : true,
         value: 40 ,
         status: 'Active',
         otherTypes : ['Hb' , 'HCT' , 'WBC' ,'MCHC' , 'MCH' , 'RBC', 'PLT' ],
-        icon : CbcIcon
-    },
+}
 
  ]

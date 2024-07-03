@@ -5,36 +5,35 @@ import { useSelector } from "react-redux";
 import { LineChart } from "../charts/LineChart";
 
 interface chartCardProps {
-  type: string;
+  type: null | string;
   value: number;
   isMeasured: boolean;
   status: string;
   othersTypes?: string[];
-  icon: string;
+  
 }
-type ChartType = "Temperature" | "Heart Rate" | "default";
-export const ChartCard: React.FC<chartCardProps> = ({
+
+export const OverviewChartCard: React.FC<chartCardProps> = ({
   type,
   value,
   isMeasured,
   othersTypes,
   status,
-  icon,
+  
 }) => {
-  const typeTitles: Record<ChartType, string> = {
-    Temperature: "oF",
-    "Heart Rate": "bpm",
-    default: "%",
-  };
-  const title = typeTitles[type as ChartType] || typeTitles["default"];
+
   const [active, setActive] = useState("HCT");
   const theme = useSelector((state: any) => state.theme.value.name);
+
+
+  
 
   return (
     <div className={`${theme}-graphicinfo-chartCard-container`}>
       <div className="flex justify-between items-center">
         <div className="flex items-start gap-2">
-          <img width={32} src={icon} alt="" />
+          <img className={`${theme}-biomarker-charts-${type?.replace(/\s+/g, '')}`} alt="" />
+          
           <h2 className="text-primary-text font-medium text-xs">{type}</h2>
         </div>
         <div className="flex gap-2">
@@ -77,7 +76,7 @@ export const ChartCard: React.FC<chartCardProps> = ({
         </span>
         {type === "Temperature" ? "oF" : type === "Heart Rate" ? "bpm" : "%"}
       </h2>
-      <div className="bg-black-secondary border border-main-border px-2 pb-6 rounded-lg h-[155px]">
+      <div className="bg-black-secondary border border-main-border px-2 pb-5  h-full max-h-[175px] rounded-lg ">
         <div className="flex w-full justify-between items-center">
           <span className="text-secondary-text">oF</span>
           <div className="flex items-center gap-2">
@@ -86,7 +85,8 @@ export const ChartCard: React.FC<chartCardProps> = ({
           </div>
         </div>
         
-        <LineChart model={type === "CBC" ? "linear" : "line"} title={title} />
+        <LineChart model={type === "CBC" ? "linear" : "line"}  />
+        
       </div>
     </div>
   );

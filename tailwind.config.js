@@ -24,7 +24,7 @@ export default {
         // Text
         'primary-text': '#F5F5FA',
         'secondary-text': 'rgba(255, 255, 255, 0.6)',
-        'third-text': '#EDEDF1',
+        'third-text': 'rgba(255, 255, 255, 0.38)',
         'fourth-text': '#E2E2E9',
 
         // Brand
