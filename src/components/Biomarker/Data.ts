@@ -1,11 +1,11 @@
-import Heart from '../../../public/Themes/Aurora/icons/Heart.svg';
-import Camera from '../../../public/Themes/Aurora/icons/camera-purple.svg';
-import ClipBoard from '../../../public/Themes/Aurora/icons/clipboard-text.svg';
-import Mind from '../../../public/Themes/Aurora/icons/Mind-icon.svg';
-import Micro from '../../../public/Themes/Aurora/icons/Microbiome.svg';
-import Blood from '../../../public/Themes/Aurora/icons/Blood-age.svg';
-import ArtBoard from '../../../public/Themes/Aurora/icons/Artboard.svg';
-import Dna from '../../../public/Themes/Aurora/icons/Dna.svg';
+import Heart from '/public/Themes/Aurora/icons/Heart.svg';
+import Camera from '/public/Themes/Aurora/icons/camera-purple.svg';
+import ClipBoard from '/public/Themes/Aurora/icons/clipboard-text.svg';
+import Mind from '/public/Themes/Aurora/icons/Mind-icon.svg';
+import Micro from '/public/Themes/Aurora/icons/Microbiome.svg';
+import Blood from '/public/Themes/Aurora/icons/Blood-age.svg';
+import ArtBoard from '/public/Themes/Aurora/icons/Artboard.svg';
+import Dna from '/public/Themes/Aurora/icons/Dna.svg';
 
 
 export const BiologicalCardInfo = [

@@ -1,8 +1,8 @@
 
 import { useSelector } from "react-redux";
 import { useState, useEffect, useRef } from "react";
-import arrowUp from "../../../public/Themes/Aurora/icons/chevron-up.svg";
-import arrowDown from "../../../public/Themes/Aurora/icons/chevron-down.svg";
+import arrowUp from "/public/Themes/Aurora/icons/chevron-up.svg";
+import arrowDown from "/public/Themes/Aurora/icons/chevron-down.svg";
 import check from '/Themes/Aurora/icons/check.svg'
 import calender from '/Themes/Aurora/icons/calender.svg'
 import { appointments } from "./Data";

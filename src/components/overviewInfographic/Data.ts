@@ -1,4 +1,4 @@
-import NutritionIcon from "../../../public/Themes/Aurora/icons/Nutriton-icon.svg";
+import NutritionIcon from "/public/Themes/Aurora/icons/Nutriton-icon.svg";
 import NutritionBorder from "/public/Themes/Aurora/icons/Nutrition-border.svg";
 import ActivityIcon from "/public/Themes/Aurora/icons/Activity-logo.svg";
 import Border from "/public/Themes/Aurora/icons/Activity-border.svg";

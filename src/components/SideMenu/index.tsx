@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import icon from "@/assets/images/icon.png";
 import { useSelector } from "react-redux";
