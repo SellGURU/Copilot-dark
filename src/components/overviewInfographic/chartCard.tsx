@@ -2,7 +2,7 @@ import { useState } from "react";
 import bellIcon from "../../../public/Themes/Aurora/icons/bell-icon.svg";
 import arrowDown from '../../../public/Themes/Aurora/icons/chevron-down-green.svg'
 import { useSelector } from "react-redux";
-import { LineChart } from "../charts/lineChart";
+import { LineChart } from "@/components/index";
 
 interface chartCardProps {
   type: null | string;
@@ -56,8 +56,8 @@ export const OverviewChartCard: React.FC<chartCardProps> = ({
         </div>
       </div>
       <div className="flex  my-1 ">
-        {othersTypes?.map((item) => (
-          <span
+        {othersTypes?.map((item , i) => (
+          <span key={i}
             onClick={() => setActive(item)}
             className={`${
               active === item

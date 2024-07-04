@@ -14,7 +14,6 @@
     "@tanstack/react-table": "^8.17.3",
     "@types/node": "^20.12.12",
     "chart.js": "^4.4.3",
-    "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-plugin-annotation": "^3.0.1",
     "date-fns": "^3.6.0",
     "react": "^18.2.0",

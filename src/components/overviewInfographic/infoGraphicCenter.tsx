@@ -4,8 +4,8 @@ import { patientMainInfo } from "./Data.ts";
 import { PatientInfo } from "./patientInfo.tsx";
 import { useSelector } from "react-redux";
 import { useState ,} from "react";
-import ArrowRight from "../../../public/Themes/Aurora/icons/arrowRight.svg";
-import { MixedLinesChart } from "../charts/mixedLinesChart.tsx";
+import ArrowRight from "/public/Themes/Aurora/icons/arrowRight.svg";
+import { MixedLinesChart } from "@/components/index.ts";
 export const InfoGraphicCenter = () => {
   const theme = useSelector((state: any) => state.theme.value.name);
   const [isNext, setIsNext] = useState(false);
@@ -28,8 +28,8 @@ export const InfoGraphicCenter = () => {
         {!isNext ? (
           <div className="relative flex justify-center w-full pb-3">
             <img src={Img} className="max-h-[565px]" />
-            {patientMainInfo.map((item) => (
-              <div
+            {patientMainInfo.map((item , i) => (
+              <div key={i}
                 className={` ${theme}-graphicinfo-patientinfo ${theme}-graphicinfo-patientinfo-${item.name}-position`}
               >
                 <PatientInfo

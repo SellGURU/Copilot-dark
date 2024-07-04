@@ -46,8 +46,9 @@ export const ProfileInfoCard = () => {
       </div>
 
       <div className=" ml-4 flex gap-1 relative  ">
-        {BiologicalCardInfo.map((item) => (
+        {BiologicalCardInfo.map((item , i) => (
           <ProgressCircle
+          key={i}
             size={45}
             progress={85}
             title={item.title}
@@ -75,8 +76,9 @@ export const ProfileInfoCard = () => {
         </div>
       </div>
       <div className="flex  relative  ">
-        {MolecularCardInfo.map((item) => (
+        {MolecularCardInfo.map((item , i) => (
           <ProgressCircle
+          key={i}
             size={45}
             progress={45}
             title={item.title}

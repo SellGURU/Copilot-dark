@@ -1,6 +1,5 @@
 import {Dispatch , SetStateAction } from "react";
-import { LineChart } from "../charts/lineChart";
-import { MixedLinesChart } from "../charts/mixedLinesChart";
+import { LineChart , MixedLinesChart } from "@/components/index"
 import { useSelector } from "react-redux";
 interface CharCardProps {
 
@@ -21,7 +20,6 @@ export const ChartCard: React.FC<CharCardProps> = ({
   setActive
 }) => {
   const theme = useSelector((state: any) => state.theme.value.name);
-console.log(title);
 
   return (
     <div onClick={()=> setActive(title)} className={`${active === title ? 'bg-brand-primary-color' : 'bg-black-primary'} px-3 py-3  border border-main-border rounded-2xl flex gap-2 max-w-sm`}>

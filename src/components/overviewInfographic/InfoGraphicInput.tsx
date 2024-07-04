@@ -1,7 +1,7 @@
-import stars from "../../../public/Themes/Aurora/icons/stars.svg";
-import logo from "../../../public/Themes/Aurora/icons/input-logo.svg";
-import camera from "../../../public/Themes/Aurora/icons/camera.svg";
-import microphone from "../../../public/Themes/Aurora/icons/input-microphone.svg";
+import stars from "/public/Themes/Aurora/icons/stars.svg";
+import logo from "/public/Themes/Aurora/icons/input-logo.svg";
+import camera from "/public/Themes/Aurora/icons/camera.svg";
+import microphone from "/public/Themes/Aurora/icons/input-microphone.svg";
 import {useSelector} from "react-redux";
 import { useState } from "react";
 interface InfoGraphicInputProps{

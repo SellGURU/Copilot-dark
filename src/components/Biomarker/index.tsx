@@ -1,16 +1,16 @@
 import { useEffect , useRef } from "react";
 import { ProfileInfoCard } from "./profileInfoCard";
 import SearchBox from "../searchBox";
-import TabsWrapper from "../tabs/index.tsx";
+import {TabsWrapper} from "@/components/index.ts";
 import { ChartInfo, TabsInfo } from "./Data";
 import stars from "/public/Themes/Aurora/icons/stars.svg";
 import AddIcon from "/public/Themes/Aurora/icons/add-square.svg";
-import { ChartCard } from "./chartCard";
+import { ChartCard } from "./chartCard.tsx";
 import { OverviewChartCard } from "../overviewInfographic/chartCard";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import logo from "/public/Themes/Aurora/icons/input-logo.svg";
-import { ButtonPrimary, ButtonSecondary } from "../badge/button";
+import { ButtonPrimary, ButtonSecondary } from "@/components/index.ts";
 import { InfoGraphicInput } from "../overviewInfographic/InfoGraphicInput.tsx";
 export const Biomarker = () => {
   const theme = useSelector((state: any) => state.theme.value.name);

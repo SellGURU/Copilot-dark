@@ -10,9 +10,9 @@
 .Aurora-tab[data-active="true"] {
   @apply bg-brand-primary-color ;
 }
-.Aurora-tab[data-isLast="true"] {
+.Aurora-tab[data-islast="true"] {
   @apply rounded-r-xl;
 }
-.Aurora-tab[data-isFirst="true"] {
+.Aurora-tab[data-isfirst="true"] {
   @apply rounded-l-xl;
 }

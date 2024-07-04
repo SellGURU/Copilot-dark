@@ -56,7 +56,7 @@ export const InfoGraghicBtn = ({
 
   return (
     <>
-      <div data-isActive={active===text} onClick={handleClick} className={`${theme}-graphicinfo-btn-container`}>
+      <div data-isactive={active===text} onClick={handleClick} className={`${theme}-graphicinfo-btn-container`}>
         <div className="flex items-center gap-1">
           <h2 className={`${theme}-graphicinfo-btn-text`}>{text}</h2>
           <span className={`${theme}-graphicinfo-btn-number ${!number && "hidden"}`}>

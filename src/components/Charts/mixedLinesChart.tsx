@@ -28,7 +28,7 @@ ChartJS.register(
 interface MixedLinesChartProps{
   active : boolean;
 }
-export const MixedLinesChart : React.FC<MixedLinesChartProps> = ({active}) => {
+ export const MixedLinesChart : React.FC<MixedLinesChartProps> = ({active}) => {
   const chartRef = useRef<ChartJS<"line">>(null);
 
   const data = {

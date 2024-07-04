@@ -11,8 +11,6 @@ import {
   Filler,
   ChartOptions,
 } from "chart.js";
-import "chartjs-adapter-date-fns";
-
 ChartJS.register(
   LineElement,
   CategoryScale,
@@ -27,7 +25,7 @@ interface LineChartProps {
   active : boolean;
   
 }
-export const LineChart: React.FC<LineChartProps> = ({ model , active }) => {
+ export const LineChart: React.FC<LineChartProps> = ({ model , active }) => {
   const chartRef = useRef<ChartJS<"line">>(null);
   const data = useMemo(() => [5, 5.8, 3, 5, 3, 3.3], []);
   const xData = useMemo(
@@ -154,3 +152,4 @@ export const LineChart: React.FC<LineChartProps> = ({ model , active }) => {
      
   )
 };
+

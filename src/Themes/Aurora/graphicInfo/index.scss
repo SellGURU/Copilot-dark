@@ -4,10 +4,10 @@
 .Aurora-graphicinfo-btn-text {
   @apply text-primary-text font-medium text-sm;
 }
-.Aurora-graphicinfo-btn-container[data-isActive="true"] {
+.Aurora-graphicinfo-btn-container[data-isactive="true"] {
   @apply rounded-t-xl;
 }
-.Aurora-graphicinfo-btn-container[data-isActive="false"] {
+.Aurora-graphicinfo-btn-container[data-isactive="false"] {
   @apply rounded-xl;
 }
 .Aurora-graphicinfo-btn-number {
